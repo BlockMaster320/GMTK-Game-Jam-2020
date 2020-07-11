@@ -10,6 +10,7 @@ cooldownCount = 0;
 bulletNumber = 0;	//circular type variables
 rotation = 0;	//sprial type variables
 rotationSpeed = 0;
+
 switch (towerType)
 {
 	case towerTypes.circular:

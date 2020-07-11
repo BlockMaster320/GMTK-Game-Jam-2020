@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0bff21ed-71a2-4bd2-a5ec-fc0ac1b97cbd",
+            "Value": {
+                "id": "40109725-9c5e-4b15-b7da-5abf977322a4",
+                "resourcePath": "objects\\oGameManager\\oGameManager.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1233cfe7-464c-489e-8909-05d2812245e9",
             "Value": {
                 "id": "b7470765-b52d-44a3-8f04-6e2bcc65093c",
@@ -52,6 +60,14 @@
                 "id": "6c0062ff-e41c-4768-a3f3-243897df5780",
                 "resourcePath": "views\\22b5b08d-3fbc-4033-9f01-8890382568f8.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2572ea47-c1e0-4049-a1c3-ccd2138ee610",
+            "Value": {
+                "id": "7f727281-6ab6-4086-943e-df4c4ac6c998",
+                "resourcePath": "objects\\oBullet\\oBullet.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -71,6 +87,14 @@
             }
         },
         {
+            "Key": "4ee2b24e-a65c-49ff-92b1-a622e98797ca",
+            "Value": {
+                "id": "c9289d0d-df8e-455a-864c-73eb7c8bf7be",
+                "resourcePath": "objects\\oTower\\oTower.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
             "Value": {
                 "id": "435c9e8d-59e6-47fe-bf94-db37ac19a4d9",
@@ -84,6 +108,22 @@
                 "id": "c14c34da-4d95-4fa5-b0d8-7eb19004a58e",
                 "resourcePath": "rooms\\room0\\room0.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "8a39d47e-258c-4823-a980-21e6951aa107",
+            "Value": {
+                "id": "9ca9ead2-4571-4f00-be7c-c4cd19bc0b4f",
+                "resourcePath": "objects\\oPlayer\\oPlayer.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "92485011-693c-4d8e-aa84-0b96080d27bf",
+            "Value": {
+                "id": "bce671e2-1858-440a-8d3a-5b0587415596",
+                "resourcePath": "objects\\oCamera\\oCamera.yy",
+                "resourceType": "GMObject"
             }
         },
         {

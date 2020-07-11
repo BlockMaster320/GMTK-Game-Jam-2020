@@ -1,0 +1,1 @@
+draw_rectangle_colour(x - 5, y, x + 5, y - 25, c_white, c_white, c_white, c_white, false);

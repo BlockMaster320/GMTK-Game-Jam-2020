@@ -1,4 +1,4 @@
-if (random(100) < sniperSpawn)
+if (random(spawnSpd) < sniperSpawn)
 {
 	spawnOff = 300
 	minOff = 100
@@ -6,26 +6,29 @@ if (random(100) < sniperSpawn)
 	tower.towerType = towerTypes.sniper
 }
 
-if (random(100) < circularSpawn)
+if (random(spawnSpd) < circularSpawn)
 {
 	spawnOff = 80
-	minOff = 30
+	minOff = minOffDef
 	var tower = SpawnTower()
 	tower.towerType = towerTypes.circular
 }
 
-if (random(100) < spiralSpawn)
+if (random(spawnSpd) < spiralSpawn)
 {
-	spawnOff = 150
-	minOff = 40
+	spawnOff = spawnOffDef
+	minOff = minOffDef
 	var tower = SpawnTower()
 	tower.towerType = towerTypes.spiral
 }
 
-if (random(100) < rotazionSpawn)
+if (random(spawnSpd) < rotazionSpawn)
 {
 	spawnOff = 100
-	minOff = 30
+	minOff = minOffDef
 	var tower = SpawnTower()
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
+
+spawnSpd = max(spawnSpd - 0.01,0)
+

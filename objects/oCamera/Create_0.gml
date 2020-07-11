@@ -5,8 +5,10 @@ rot = 0
 
 spd = .2	//0 - 1 v lerpu
 
-x = oPlayer.x - viewW / 2
-y = oPlayer.y - viewH / 2
+x = 0
+y = 0
+camW = room_width
+camH = camW / 16 * 9
 
 application_surface_draw_enable(false)
 //display_set_gui_size(guiW,guiH)

@@ -58,7 +58,7 @@
             "Key": "1d076ce5-b617-4927-85f9-0e47a423b798",
             "Value": {
                 "id": "94f890f0-e60f-4ce3-80f9-027130dd936f",
-                "resourcePath": "sprites\\sprite3\\sprite3.yy",
+                "resourcePath": "sprites\\sPlayerMove\\sPlayerMove.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -84,6 +84,14 @@
                 "id": "367a9bf0-535e-4c07-b971-3f57728f3f36",
                 "resourcePath": "views\\2c156cf8-da12-4e07-aa99-0d391ee2446e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2fd65931-84ef-4822-a691-7fae82bd8bc4",
+            "Value": {
+                "id": "758d2815-7a4e-4d10-8151-c07743ce325c",
+                "resourcePath": "scripts\\SpawnTower\\SpawnTower.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -127,6 +135,14 @@
             }
         },
         {
+            "Key": "8409aad7-bc72-424f-8e51-c2308eb4949d",
+            "Value": {
+                "id": "60e907a2-ffb0-48ca-be88-94f21b640095",
+                "resourcePath": "sprites\\sMenuScreen\\sMenuScreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "89ac0ec7-a1fb-423c-a5cc-e0d80e1157af",
             "Value": {
                 "id": "c14c34da-4d95-4fa5-b0d8-7eb19004a58e",
@@ -164,6 +180,14 @@
                 "id": "e9b596fd-5b6c-4afb-ad28-e28d91e327aa",
                 "resourcePath": "views\\94109e90-1496-43c9-912f-97b601d89c0e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "944ad926-f71e-4157-bcea-ca786975c39c",
+            "Value": {
+                "id": "adac8b0f-a360-4534-8364-6e0acd805ce7",
+                "resourcePath": "sprites\\sPlayerIdle\\sPlayerIdle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -212,6 +236,14 @@
                 "id": "60189495-6ac1-4b76-9e30-2e169628c89f",
                 "resourcePath": "views\\ad148324-148b-49aa-baee-28320d18545c.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "adae51d8-95d5-471b-835a-94f334bb4331",
+            "Value": {
+                "id": "4d6c9e17-f329-4f09-a374-337843931654",
+                "resourcePath": "rooms\\rMenu\\rMenu.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -304,7 +336,7 @@
         }
     ],
     "script_order": [
-        
+        "2fd65931-84ef-4822-a691-7fae82bd8bc4"
     ],
     "tutorial": ""
 }

@@ -17,8 +17,8 @@ switch (towerType)
 			}
 			cooldownCount = 0;
 		}
-		image_xscale -= 0.005 * global.timeSpeed;
-		image_yscale -= 0.005 * global.timeSpeed;
+		image_xscale -= 0.002 * global.timeSpeed;
+		image_yscale -= 0.002 * global.timeSpeed;
 	}
 	break;
 		

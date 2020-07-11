@@ -1,13 +1,19 @@
 if (random(100) < sniperSpawn)
 {
-	var pX = oPlayer.x
-	var pY = oPlayer.y
-	do
-	{
-		var spawnX = random_range(pX - spawnOff,pX + spawnOff)
-		var spawnY = random_range(pY - spawnOff,pY + spawnOff)
-	}
-	until (!tilemap_get_at_pixel(tilemap,spawnX,spawnY))
-	var tower = instance_create_layer(spawnX,spawnY,"Instances",oTower)
+	spawnOff = 300
+	var tower = SpawnTower()
 	tower.towerType = towerTypes.sniper
+}
+
+if (random(100) < circularSpawn)
+{
+	spawnOff = 50
+	var tower = SpawnTower()
+	tower.towerType = towerTypes.circular
+}
+
+if (random(100) < spiralSpawn)
+{
+	var tower = SpawnTower()
+	tower.towerType = towerTypes.spiral
 }

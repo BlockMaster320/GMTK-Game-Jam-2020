@@ -17,8 +17,11 @@ global.timeSpeed = 1;
 #macro viewW 384
 #macro viewH 216
 
-sniperSpawn = 1
+sniperSpawn = .01
+spiralSpawn = .03
+circularSpawn = .05
 
-spawnOff = 100
+spawnOff = 150
 
+randomize()
 tilemap = layer_tilemap_get_id("tlWalls")

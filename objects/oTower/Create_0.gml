@@ -13,6 +13,7 @@ switch (towerType)
 {
 	case towerTypes.circular:
 	{
+		sprite_index = sEnemy3
 		bulletSpeed = 0.5;
 		bulletSize = 1;
 		cooldown = 60;
@@ -29,6 +30,7 @@ switch (towerType)
 	break;
 	case towerTypes.sniper:
 	{
+		sprite_index = sEnemy2
 		bulletSpeed = 2;
 		bulletSize = 1;
 		cooldown = 60;

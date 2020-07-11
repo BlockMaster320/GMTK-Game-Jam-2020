@@ -4,17 +4,20 @@ if (keyboard_check_pressed(vk_escape)) game_end()
 
 mDir = point_direction(x,y,mouse_x,mouse_y)
 
-up = false
-down = false 
-left = false
-right = false
-if (keyboard_check(ord(keyRight[0]))) {right = true; lastKeyInfo = keyRight; lastKeyInput = 0}
-if (keyboard_check(ord(keyLeft[0]))) {left = true; lastKeyInfo = keyLeft; lastKeyInput = 1}
-if (keyboard_check(ord(keyUp[0]))) {up = true; lastKeyInfo = keyUp; lastKeyInput = 2}
-if (keyboard_check(ord(keyDown[0]))) {down = true; lastKeyInfo = keyDown; lastKeyInput = 3}
-if (keyboard_check(ord(keyAbility1[0]))) {ability1 = true; lastKey = keyAbility1; lastKeyInput = 4}
-if (keyboard_check(ord(keyAbility2[0]))) {ability2 = true; lastKey = keyAbility2; lastKeyInput = 5}
-if (keyboard_check(ord(keyAbility3[0]))) {ability3 = true; lastKey = keyAbility3; lastKeyInput = 6}
+if (!global.pause)
+{
+	up = false
+	down = false 
+	left = false
+	right = false
+	if (keyboard_check(ord(keyRight[0]))) {right = true; lastKeyInfo = keyRight; lastKeyInput = 0}
+	if (keyboard_check(ord(keyLeft[0]))) {left = true; lastKeyInfo = keyLeft; lastKeyInput = 1}
+	if (keyboard_check(ord(keyUp[0]))) {up = true; lastKeyInfo = keyUp; lastKeyInput = 2}
+	if (keyboard_check(ord(keyDown[0]))) {down = true; lastKeyInfo = keyDown; lastKeyInput = 3}
+	if (keyboard_check(ord(keyAbility1[0]))) {ability1 = true; lastKey = keyAbility1; lastKeyInput = 4}
+	if (keyboard_check(ord(keyAbility2[0]))) {ability2 = true; lastKey = keyAbility2; lastKeyInput = 5}
+	if (keyboard_check(ord(keyAbility3[0]))) {ability3 = true; lastKey = keyAbility3; lastKeyInput = 6}
+}
 #endregion
 
 #region Collision
@@ -126,7 +129,7 @@ if (keyboard_check_pressed(vk_enter))
 }
 #endregion
 
-//Slow Time
+//Slow || Speed Up Time
 if (global.pause)
 {
 	if (global.timeSpeed > 0.05)

@@ -10,6 +10,7 @@ switch (towerType)
 				var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
 				_newBullet.movementSpeed = bulletSpeed;
 				_newBullet.direction = (360 / bulletNumber) * _i;
+				_newBullet.image_angle = _newBullet.direction;
 				_newBullet.bulletSize = bulletSize;
 				
 				image_xscale = 1;
@@ -29,6 +30,7 @@ switch (towerType)
 			var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
 			_newBullet.movementSpeed = bulletSpeed;
 			_newBullet.direction = rotation;
+			_newBullet.image_angle = _newBullet.direction;
 			_newBullet.bulletSize = bulletSize;
 			
 			cooldownCount = 0;
@@ -43,6 +45,7 @@ switch (towerType)
 			var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
 			_newBullet.movementSpeed = bulletSpeed;
 			_newBullet.direction = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
+			_newBullet.image_angle = _newBullet.direction;
 			_newBullet.bulletSize = bulletSize;
 			
 			cooldownCount = 0;

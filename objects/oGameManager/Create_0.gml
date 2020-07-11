@@ -11,3 +11,9 @@ enum towerTypes
 
 #macro viewW 384
 #macro viewH 216
+
+sniperSpawn = 1
+
+spawnOff = 100
+
+tilemap = layer_tilemap_get_id("tlWalls")

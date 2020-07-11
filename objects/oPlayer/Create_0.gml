@@ -1,9 +1,6 @@
-#macro TL_SIZE 16
-#macro guiW 256
-#macro guiH 144
 hsp = 0
 vsp = 0
-spd = 4
+spd = 2
 moveDir = 0
 tilemap = layer_tilemap_get_id("tlWalls")
 hit = false

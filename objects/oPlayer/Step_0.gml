@@ -129,12 +129,16 @@ if (keyboard_check_pressed(vk_enter))
 //Slow Time
 if (global.pause)
 {
-	if (global.timeSpeed > 0.1)
-		global.timeSpeed -= 0.05;
+	if (global.timeSpeed > 0.05)
+		global.timeSpeed -= 0.025;
 }
 else
 {
 	if (global.timeSpeed < 1)
-		global.timeSpeed += 0.05;
+		global.timeSpeed += 0.025;
 }
-global.timeSpeed = clamp(global.timeSpeed, 0, 1);
+global.timeSpeed = clamp(global.timeSpeed, 0.05, 1);
+show_debug_message("timeSpeed: " + string(global.timeSpeed));
+
+//Change Sprite Animation Speed
+image_speed = global.timeSpeed;

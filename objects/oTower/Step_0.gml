@@ -39,5 +39,5 @@ if (cooldownCount >= cooldown)
 		break;
 	}
 }
-cooldownCount += 1 * (!global.pause);
-rotation += rotationSpeed;
+cooldownCount += 1 * global.timeSpeed;
+rotation += rotationSpeed * global.timeSpeed;

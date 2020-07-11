@@ -5,6 +5,11 @@ enum towerTypes
 	spiral,
 	sniper
 }
+
+//Set Time Global Variables
+global.pause = false;
+global.timeSpeed = 1;
+
 #macro TL_SIZE 16
 #macro guiW 384
 #macro guiH 216

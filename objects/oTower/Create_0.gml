@@ -22,6 +22,7 @@ switch (towerType)
 	break;
 	case towerTypes.spiral:
 	{
+		sprite_index = sEnemy1;
 		bulletSpeed = 0.75;
 		bulletSize = 1;
 		cooldown = 5;

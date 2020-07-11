@@ -1,9 +1,9 @@
 //Spawn Bullets
-if (cooldownCount >= cooldown)
+switch (towerType)
 {
-	switch (towerType)
+	case towerTypes.circular:
 	{
-		case towerTypes.circular:
+		if (cooldownCount >= cooldown)
 		{
 			for (var _i = 0; _i < bulletNumber; _i ++)
 			{
@@ -11,12 +11,20 @@ if (cooldownCount >= cooldown)
 				_newBullet.movementSpeed = bulletSpeed;
 				_newBullet.direction = (360 / bulletNumber) * _i;
 				_newBullet.bulletSize = bulletSize;
+				
+				image_xscale = 1;
+				image_yscale = 1;
 			}
 			cooldownCount = 0;
 		}
-		break;
+		image_xscale -= 0.005 * global.timeSpeed;
+		image_yscale -= 0.005 * global.timeSpeed;
+	}
+	break;
 		
-		case towerTypes.spiral:
+	case towerTypes.spiral:
+	{
+		if (cooldownCount >= cooldown)
 		{
 			var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
 			_newBullet.movementSpeed = bulletSpeed;
@@ -25,9 +33,12 @@ if (cooldownCount >= cooldown)
 			
 			cooldownCount = 0;
 		}
-		break;
+	}
+	break;
 		
-		case towerTypes.sniper:
+	case towerTypes.sniper:
+	{
+		if (cooldownCount >= cooldown)
 		{
 			var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
 			_newBullet.movementSpeed = bulletSpeed;
@@ -36,8 +47,10 @@ if (cooldownCount >= cooldown)
 			
 			cooldownCount = 0;
 		}
-		break;
+		image_angle = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
 	}
+	break;
 }
-cooldownCount += 1 * (!global.pause);
-rotation += rotationSpeed;
+cooldownCount += 1 * global.timeSpeed;
+rotation += rotationSpeed * global.timeSpeed;
+image_angle += rotationSpeed * global.timeSpeed;

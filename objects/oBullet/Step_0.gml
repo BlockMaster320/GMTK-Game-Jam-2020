@@ -1,5 +1,5 @@
 //Move If the Paused Isn't Activated
-speed = movementSpeed * (!global.pause);
+speed = movementSpeed * global.timeSpeed;
 bulletSize = 0;
 
 //Destroy a Bullet Otside the Room

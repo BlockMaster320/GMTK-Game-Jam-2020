@@ -9,6 +9,6 @@ x = oPlayer.x - viewW / 2
 y = oPlayer.y - viewH / 2
 
 application_surface_draw_enable(false)
-display_set_gui_size(guiW,guiH)
+//display_set_gui_size(guiW,guiH)
 
 global.screenShake = 0

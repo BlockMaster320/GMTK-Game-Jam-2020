@@ -20,8 +20,8 @@ if (keyboard_check(ord(keyAbility3[0]))) {ability3 = true; lastKey = keyAbility3
 #region Collision
 moveDir = point_direction(0,0,right - left,down - up)
 var moving = (right - left != 0) or (down - up != 0)
-hsp = round(lengthdir_x(spd * moving,moveDir))
-vsp = round(lengthdir_y(spd * moving,moveDir))
+hsp = round(lengthdir_x(spd * moving * global.timeSpeed ,moveDir))
+vsp = round(lengthdir_y(spd * moving * global.timeSpeed,moveDir))
 
 var bboxSide
 if (hsp > 0) bboxSide = bbox_right; else bboxSide = bbox_left
@@ -125,3 +125,16 @@ if (keyboard_check_pressed(vk_enter))
 	keyChange = true;
 }
 #endregion
+
+//Slow Time
+if (global.pause)
+{
+	if (global.timeSpeed > 0.1)
+		global.timeSpeed -= 0.05;
+}
+else
+{
+	if (global.timeSpeed < 1)
+		global.timeSpeed += 0.05;
+}
+global.timeSpeed = clamp(global.timeSpeed, 0, 1);

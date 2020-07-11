@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "8be5dd88-ddf1-4cfe-9b11-df7956d63055",
+            "Value": {
+                "id": "467af4e9-39ee-4bca-b869-26d02906ffe3",
+                "resourcePath": "sprites\\sKeyboard\\sKeyboard.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "92485011-693c-4d8e-aa84-0b96080d27bf",
             "Value": {
                 "id": "bce671e2-1858-440a-8d3a-5b0587415596",

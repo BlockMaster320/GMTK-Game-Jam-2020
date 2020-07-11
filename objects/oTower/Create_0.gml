@@ -1,6 +1,7 @@
 //Set Tower Properties
-towerType = towerTypes.sniper;
-bulletOrigin = y - 20;
+towerType = towerTypes.spiral;
+bulletOrigin = y;
+image_speed = 0;
 
 bulletSpeed = 0;	//general type variables
 bulletSize = 1;

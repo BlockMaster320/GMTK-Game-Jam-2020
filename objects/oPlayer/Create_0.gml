@@ -1,6 +1,6 @@
 hsp = 0
 vsp = 0
-spd = 2
+spd = 1
 moveDir = 0
 tilemap = layer_tilemap_get_id("tlWalls")
 hit = false

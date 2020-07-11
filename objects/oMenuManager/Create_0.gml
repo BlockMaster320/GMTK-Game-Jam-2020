@@ -13,3 +13,7 @@ enum SELECT
 }
 selected = SELECT.play
 menuWords = ["Play","Exit"]
+
+ini_open("save.ini")
+highscore = ini_read_real("Save","Highscore",0)
+ini_close()

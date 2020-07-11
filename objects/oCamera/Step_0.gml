@@ -11,8 +11,12 @@ global.screenShake = max(global.screenShake-2,0)
 x = lerp(x,targetX,spd)
 y = lerp(y,targetY,spd)
 rot = lerp(0,rot,spd)
-x = clamp(x,0,room_width - viewW)
-y = clamp(y,0,room_height - viewH)
+x = clamp(x,0,room_width - camW)
+y = clamp(y,0,room_height - camH)
 
 camera_set_view_pos(cam,x,y)
 camera_set_view_angle(cam,rot)
+
+camW = lerp(camW,viewW,0.01)
+camH = camW / 16 * 9
+camera_set_view_size(cam,camW,camH)

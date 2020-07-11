@@ -1,6 +1,10 @@
 //Move If the Paused Isn't Activated
 speed = movementSpeed * global.timeSpeed;
-direction += rotSpd * random_range(-1,1) 
+if (rotSpd > 0)
+{
+	direction += rotSpd * random_range(-1,1)
+	image_angle = direction
+}
 bulletSize = 0;
 
 //Destroy a Bullet Otside the Room

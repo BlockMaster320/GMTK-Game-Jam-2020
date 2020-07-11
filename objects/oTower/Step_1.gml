@@ -15,11 +15,11 @@ if (justStarted)
 		break;
 		case towerTypes.spiral:
 		{
-			sprite_index = sEnemy2
+			sprite_index = sEnemyBayblade
 			bulletSpeed = 1;
 			bulletSize = 1;
 			cooldown = 15;
-			rotationSpeed = 1;
+			rotationSpeed = -2;
 		}
 		break;
 		case towerTypes.sniper:

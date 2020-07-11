@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "4d95310e-6310-43f6-a29b-d9f73c02d128",
+            "Value": {
+                "id": "9bd77b63-791e-4c01-aafa-f73e9118f9df",
+                "resourcePath": "sprites\\sShootPart\\sShootPart.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4ee2b24e-a65c-49ff-92b1-a622e98797ca",
             "Value": {
                 "id": "c9289d0d-df8e-455a-864c-73eb7c8bf7be",
@@ -276,6 +284,14 @@
                 "id": "9543267d-1fc8-47cd-ac49-25bdc725fee3",
                 "resourcePath": "views\\b7e22f4c-8815-4298-a566-32b513af6710.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bdb6c301-f559-4def-b39a-9580df1783f4",
+            "Value": {
+                "id": "ec3bc81d-475c-4dff-9a3c-8b1f43b1a008",
+                "resourcePath": "sprites\\sEnemyBayblade\\sEnemyBayblade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

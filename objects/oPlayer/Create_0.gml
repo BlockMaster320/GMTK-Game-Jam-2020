@@ -5,6 +5,10 @@ moveDir = 0
 tilemap = layer_tilemap_get_id("tlWalls")
 hit = false
 
+//Set Image Index to 0
+playerAnimationIndex = 0;
+playerAnimationFlipper = 0;
+
 //KEYBOARD INPUT CONTROL SETUP//
 //Crate Keyboard Key Array
 keyLetters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",	//9

@@ -48,6 +48,35 @@ if (tilemap_get_at_pixel(tilemap,bbox_left,bboxSide + vsp) != 0 or
 y += vsp
 #endregion
 
+//Set Animation Sprite
+if (hsp > 0)
+{
+	if (vsp > 0)
+		playerAnimationIndex = 2;
+	else if (vsp < 0)
+		playerAnimationIndex = 14;
+	else
+		playerAnimationIndex = 0;
+}
+else if (hsp < 0)
+{
+	if (vsp > 0)
+		playerAnimationIndex = 6;
+	else if (vsp < 0)
+		playerAnimationIndex = 10;
+	else
+		playerAnimationIndex = 8;
+}
+else if (vsp > 0)
+	playerAnimationIndex = 4;
+else if (vsp < 0)
+	playerAnimationIndex = 12;
+
+image_index = playerAnimationIndex + round(playerAnimationFlipper);
+playerAnimationFlipper += image_speed * 0.1;
+if (playerAnimationFlipper >= 1)
+	playerAnimationFlipper = 0;
+
 #region Hit
 if (keyboard_check_pressed(vk_enter)) hit = true
 
@@ -145,3 +174,13 @@ show_debug_message("timeSpeed: " + string(global.timeSpeed));
 
 //Change Sprite Animation Speed
 image_speed = global.timeSpeed;
+
+//Trigger KeyChange on Collision With Bullet
+if (place_meeting(x, y, oBullet))
+{
+	global.pause = true;
+	keyChange = true;
+	
+	var _bulletCollider = instance_place(x, y, oBullet);
+	instance_destroy(_bulletCollider);
+}

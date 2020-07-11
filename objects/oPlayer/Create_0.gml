@@ -38,3 +38,4 @@ keyAbility3 = keyArray[9];
 
 //Set Global Pause Variable
 global.pause = false;
+global.timeSpeed = 1;

@@ -5,7 +5,7 @@ if (keyboard_check_pressed(vk_escape)) game_end()
 mDir = point_direction(x,y,mouse_x,mouse_y)
 
 up = false
-down = false
+down = false 
 left = false
 right = false
 if (keyboard_check(ord(keyRight[0]))) {right = true; lastKeyInfo = keyRight; lastKeyInput = 0}

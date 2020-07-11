@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "964419c1-2f66-441d-959f-69e75d574189",
+            "Value": {
+                "id": "a16e78a5-b182-4a77-add9-5cdfefe37779",
+                "resourcePath": "fonts\\fntGamer\\fntGamer.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "9b56fc44-4983-4a92-a9e6-2237e29999cf",
             "Value": {
                 "id": "49c6017c-645d-4566-aa71-2aa7bef405e7",
@@ -260,6 +268,14 @@
                 "id": "9543267d-1fc8-47cd-ac49-25bdc725fee3",
                 "resourcePath": "views\\b7e22f4c-8815-4298-a566-32b513af6710.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c551ddf8-3b4a-42d2-8ba7-c01df11945c9",
+            "Value": {
+                "id": "14951ccb-738f-4814-9ae7-1c7d865cc6d7",
+                "resourcePath": "objects\\oMenuManager\\oMenuManager.yy",
+                "resourceType": "GMObject"
             }
         },
         {

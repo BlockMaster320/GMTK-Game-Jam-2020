@@ -7,19 +7,19 @@ if (justStarted)
 		case towerTypes.circular:
 		{
 			sprite_index = sEnemy3
-			bulletSpeed = 0.5;
+			bulletSpeed = 0.8;
 			bulletSize = 1;
-			cooldown = 150;
-			bulletNumber = 20;
+			cooldown = 250;
+			bulletNumber = 15;
 		}
 		break;
 		case towerTypes.spiral:
 		{
 			sprite_index = sEnemy2
-			bulletSpeed = 0.75;
+			bulletSpeed = 1;
 			bulletSize = 1;
-			cooldown = 8;
-			rotationSpeed = 3;
+			cooldown = 15;
+			rotationSpeed = 1;
 		}
 		break;
 		case towerTypes.sniper:
@@ -27,7 +27,15 @@ if (justStarted)
 			sprite_index = sEnemy2
 			bulletSpeed = 3;
 			bulletSize = 1;
-			cooldown = 80;
+			cooldown = 300;
+		}
+		break;
+		case towerTypes.rotazionSpielzeug:
+		{
+			sprite_index = sEnemy1
+			bulletSpeed = 1.5;
+			bulletSize = 1;
+			cooldown = 150;
 		}
 		break;
 	}

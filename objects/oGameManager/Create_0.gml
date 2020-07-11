@@ -3,25 +3,21 @@ enum towerTypes
 {
 	circular,
 	spiral,
-	sniper
+	sniper,
+	rotazionSpielzeug
 }
 
 //Set Time Global Variables
 global.pause = false;
 global.timeSpeed = 1;
 
-#macro TL_SIZE 16
-#macro guiW 384
-#macro guiH 216
-
-#macro viewW 384
-#macro viewH 216
-
 sniperSpawn = .01
 spiralSpawn = .03
 circularSpawn = .05
+rotazionSpawn = .1
 
 spawnOff = 150
+minOff = 40
 
 randomize()
 tilemap = layer_tilemap_get_id("tlWalls")

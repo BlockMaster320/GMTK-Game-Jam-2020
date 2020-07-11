@@ -17,8 +17,8 @@ switch (towerType)
 			}
 			cooldownCount = 0;
 		}
-		image_xscale -= 0.002 * global.timeSpeed;
-		image_yscale -= 0.002 * global.timeSpeed;
+		image_xscale -= 0.001 * global.timeSpeed;
+		image_yscale -= 0.001 * global.timeSpeed;
 	}
 	break;
 		
@@ -50,7 +50,27 @@ switch (towerType)
 		image_angle = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
 	}
 	break;
+	
+	case towerTypes.rotazionSpielzeug:
+	{
+		if (cooldownCount >= cooldown)
+		{
+			repeat(2)
+			{
+				var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
+				_newBullet.movementSpeed = bulletSpeed;
+				_newBullet.direction = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
+				_newBullet.bulletSize = bulletSize;
+				_newBullet.rotSpd = 10
+			}
+			
+			cooldownCount = 0;
+		}
+		image_angle = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
+	}
+	break;
 }
 cooldownCount += 1 * global.timeSpeed;
 rotation += rotationSpeed * global.timeSpeed;
 image_angle += rotationSpeed * global.timeSpeed;
+//if (point_distance(x,y,oPlayer.x,oPlayer.y > 50000)) instance_destroy()

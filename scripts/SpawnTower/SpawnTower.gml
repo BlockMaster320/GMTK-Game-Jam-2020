@@ -7,5 +7,6 @@ do
 	spawnX -= spawnX % TL_SIZE + TL_SIZE / 2
 	spawnY -= spawnY % TL_SIZE + TL_SIZE / 2
 }
-until (!tilemap_get_at_pixel(tilemap,spawnX,spawnY) and !place_meeting(spawnX,spawnY,oPlayer))
+until (!tilemap_get_at_pixel(tilemap,spawnX,spawnY) and !place_meeting(spawnX,spawnY,oPlayer) and
+		point_distance(x,y,oPlayer.x,oPlayer.y > minOff))
 return instance_create_layer(spawnX,spawnY,"Instances",oTower)

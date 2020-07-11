@@ -25,7 +25,9 @@ for (var _i = 0; _i < array_length_1d(keyLetters); _i ++)
 //Set Key Change Variables
 lastKeyInfo = keyArray[14];
 lastKeyInput = 0;	//0 - right; 1 - left; 2 - up; 3 - down; 4 - ability1; 5 - ability2; 6 - ability3;
+keyboard_lastchar = lastKeyInfo[0];
 keyChange = false;
+keyboardVisibility = 0.5;
 
 //Set Key Input Variables
 keyRight = keyArray[14];
@@ -39,3 +41,13 @@ keyAbility3 = keyArray[9];
 //Set Global Pause Variable
 global.pause = false;
 global.timeSpeed = 1;
+
+do
+{
+	x = random_range(0, room_width);
+	y = random_range(0, room_height);
+	
+	x -= x % TL_SIZE;
+	y -= y % TL_SIZE;
+}
+until (!tilemap_get_at_pixel(tilemap, x, y));

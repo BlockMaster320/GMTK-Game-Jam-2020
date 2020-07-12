@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "586689b2-96b4-476a-9ea1-a1ee9bb6f277",
+            "Value": {
+                "id": "e6106cdb-7b17-4285-935f-a619f3b9368a",
+                "resourcePath": "objects\\oAbility\\oAbility.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6ea0a25f-3eca-49f8-b434-7bf8aa4576d0",
             "Value": {
                 "id": "c1dfb945-9cda-45d4-afc6-3cd879b5df57",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "a75b612a-a9ce-4e09-b5f2-a7644747e700",
+            "Value": {
+                "id": "099034e3-1aaf-4c6c-8f2d-f5c806c1ce6a",
+                "resourcePath": "objects\\oThiccBullet\\oThiccBullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a8d8dd19-1952-4916-a0e5-21cf9d621838",
             "Value": {
                 "id": "5cf376d1-84e0-48f8-a847-0b54145d68ce",
@@ -363,6 +379,14 @@
             "Value": {
                 "id": "c35e0435-c038-4419-b1c5-6a3b1bc66a15",
                 "resourcePath": "sprites\\sTileset\\sTileset.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ee98162b-e21a-44c0-8424-3ccc30b348f7",
+            "Value": {
+                "id": "ebc07f78-ebf8-458d-ba3d-09eff4ff336d",
+                "resourcePath": "sprites\\sThiccBullet\\sThiccBullet.yy",
                 "resourceType": "GMSprite"
             }
         },

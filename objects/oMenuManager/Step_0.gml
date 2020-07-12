@@ -1,4 +1,4 @@
-if (keyboard_check_pressed(vk_enter) and !keyboard_check(vk_alt))
+if (keyboard_check_pressed(vk_enter) and !keyboard_check(vk_alt) || buttonClick)
 {
 	switch (selected)
 	{
@@ -6,3 +6,4 @@ if (keyboard_check_pressed(vk_enter) and !keyboard_check(vk_alt))
 		case SELECT.exitGame: {game_end(); break}
 	}
 }
+buttonClick = false;

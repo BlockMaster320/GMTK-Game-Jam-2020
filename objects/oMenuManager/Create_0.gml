@@ -22,3 +22,5 @@ display_set_gui_size(384,216)
 
 towerTypesMenu = ["Sniper","Curved shots","Spiral","Circular"]
 towerTypesSprites = [sEnemy2,sEnemy1,sEnemyBayblade,sEnemy3]
+
+buttonClick = false;

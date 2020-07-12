@@ -1,5 +1,7 @@
 if (justStarted and towerState = TOWER_STATE.active)
 {
+	part_type_speed(shootSmokePart,.6 * global.timeSpeed,2.5 * global.timeSpeed,-.05,0)
+	part_particles_create(shootSmokePart,x,y,shootSmokeSys,20)
 	justStarted = false
 	
 	image_speed = 0

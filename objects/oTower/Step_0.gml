@@ -120,8 +120,8 @@ if (towerState = TOWER_STATE.active)
 		}
 		break;
 	}
-	image_xscale -= 0.001 * global.timeSpeed;
-	image_yscale -= 0.001 * global.timeSpeed;
+	image_xscale = max(image_xscale - 0.001 * global.timeSpeed,.4)
+	image_yscale = max(image_yscale - 0.001 * global.timeSpeed,.4)
 	cooldownCount += 1 * global.timeSpeed;
 	rotation += rotationSpeed * global.timeSpeed;
 	image_angle += rotationSpeed * global.timeSpeed;

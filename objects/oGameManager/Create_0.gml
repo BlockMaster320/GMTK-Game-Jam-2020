@@ -24,7 +24,7 @@ spawnOff = spawnOffDef
 minOffDef = 20
 minOff = minOffDef
 
-spawnSpd = 130	//100 - default, <100 - rychlejší spawn
+spawnSpd = 100	//100 - default, <100 - rychlejší spawn
 
 randomize()
 tilemap = layer_tilemap_get_id("tlWalls")

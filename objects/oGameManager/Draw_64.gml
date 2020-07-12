@@ -1,0 +1,2 @@
+draw_text_transformed(gdva(1350,0),gdva(30,1),"Score: " + string(round(global.currentScore)),gdva(3,0),gdva(3,1),0)
+draw_text_transformed(gdva(1350,0),gdva(60,1),"Highscore: " + string(round(global.highscore)),gdva(3,0),gdva(3,1),0)

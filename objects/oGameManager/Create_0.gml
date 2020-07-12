@@ -24,7 +24,7 @@ spawnOff = spawnOffDef
 minOffDef = 20
 minOff = minOffDef
 
-spawnSpd = 100	//100 - default, <100 - rychlejší spawn
+spawnSpd = 90	//100 - default, <100 - rychlejší spawn
 
 randomize()
 tilemap = layer_tilemap_get_id("tlWalls")
@@ -39,8 +39,6 @@ scoreMultiplier = .0005
 upgradeAvailable = true
 centerSpawnPointX = 0
 centerSpawnPointY = 0
-
-gameEnded = false
 
 #region Shader
 surfPing = -1
@@ -71,3 +69,5 @@ u_bloomRange = shader_get_uniform(shBloomPass,"bloomRange")
 bloomThresholdTop = .5
 bloomRange = .1
 #endregion
+
+soundtrack = audio_play_sound(choose(sndMenuSndtrck,sndSndtrck2),0,0)

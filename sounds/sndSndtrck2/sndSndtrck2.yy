@@ -1,8 +1,8 @@
 {
-    "id": "f19ad9a4-f710-4409-a7d5-b33420f04c81",
+    "id": "6de765d8-dee5-4c49-b9d9-11f799f6f0e4",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "sndBlank",
+    "name": "sndSndtrck2",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.31
+    "volume": 1
 }

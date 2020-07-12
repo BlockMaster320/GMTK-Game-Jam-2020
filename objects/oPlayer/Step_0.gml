@@ -341,14 +341,14 @@ if (place_meeting(x,y,oUpgrade))
 	with(oGameManager)
 	{
 		oGameManager.upgradeAvailable = true
-		oGameManager.scoreMultiplier *= 2
+		oGameManager.scoreMultiplier *= 1.5
 	}
 }
 
 //Destroy Tower on Collision With Player
 if (place_meeting(x, y, oTower))
 {
-	oGameManager.scoreMultiplier *= 1.2
+	oGameManager.scoreMultiplier *= 1.05
 	var _towerCollider = instance_place(x, y, oTower)
 	instance_destroy(_towerCollider);
 	audio_play_sound(sndSpawn,0,0)

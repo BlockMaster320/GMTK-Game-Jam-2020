@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "6de765d8-dee5-4c49-b9d9-11f799f6f0e4",
+            "Value": {
+                "id": "90614659-38f6-4cc3-af70-877bcdf931fd",
+                "resourcePath": "sounds\\sndSndtrck2\\sndSndtrck2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "6ea0a25f-3eca-49f8-b434-7bf8aa4576d0",
             "Value": {
                 "id": "c1dfb945-9cda-45d4-afc6-3cd879b5df57",

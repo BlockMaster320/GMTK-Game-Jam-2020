@@ -22,7 +22,7 @@ if (place_meeting(x, y, oTower))
 	if (nt != noone) direction = point_direction(x,y,nt.x,nt.y)
 	image_angle = direction
 	audio_play_sound(sndSpawn,0,0)
-	
+	oGameManager.scoreMultiplier *= 1.2
 }
 lifetime--
 if (lifetime < 0) instance_destroy()

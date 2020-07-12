@@ -147,6 +147,5 @@ if (global.gameEnd)
 {
 	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(100, 1), "YOU RAN", gdva(5, 0), gdva(5, 1), 0, c_white, c_white, c_white, c_white, 1);
 	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(60, 1), "OUT OF CONTROL!", gdva(5, 0), gdva(5, 1), 0, c_red, c_red, c_red, c_red, 1);
-	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(40, 1), "SCORE: " + string(global.currentScore), gdva(5, 0), gdva(5, 1), 0, c_white, c_white, c_white, c_white, 1);
-	gameEnded = true
+	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation + gdva(60, 1), "SCORE: " + string(round(global.currentScore)), gdva(5, 0), gdva(5, 1), 0, c_white, c_white, c_white, c_white, 1);
 }

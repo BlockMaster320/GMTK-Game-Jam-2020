@@ -34,10 +34,10 @@ keyChange = false;
 keyboardVisibility = 0.5;
 
 //Set Key Input Variables
-keyRight = keyArray[12];
-keyLeft = keyArray[10];
-keyUp = keyArray[1];
-keyDown = keyArray[11];
+keyRight = keyArray[15];
+keyLeft = keyArray[13];
+keyUp = keyArray[4];
+keyDown = keyArray[14];
 
 //Set Ability Variables
 addAbilityKey = false;

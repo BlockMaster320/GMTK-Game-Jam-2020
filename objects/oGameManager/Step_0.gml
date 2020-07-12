@@ -40,9 +40,9 @@ if (random(spawnSpdCorrect) < rotazionSpawn)
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
 
-spawnSpd = max(spawnSpd - 0.003,20)
+spawnSpd = max(spawnSpd - 0.004,20)
 
-global.currentScore += scoreMultiplier * (1-gameEnded)
+if (!global.gameEnd) global.currentScore += scoreMultiplier
 global.highscore = max(global.highscore,global.currentScore)
 global.prevScore = global.currentScore
 #endregion
@@ -90,7 +90,7 @@ if (upgradeAvailable)
 				{
 					instance_create_layer(spawnX,spawnY,"Instances",oUpgrade)
 				
-					repeat(1)
+					repeat(2)
 					{
 						do
 						{
@@ -110,3 +110,5 @@ if (upgradeAvailable)
 	}
 }
 #endregion
+
+if (!audio_is_playing(soundtrack)) soundtrack = audio_play_sound(choose(sndMenuSndtrck,sndSndtrck2),0,0)

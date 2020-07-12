@@ -1,4 +1,4 @@
-global.timeSpeed = .005
+global.timeSpeed = lerp(global.timeSpeed,.005,.05)
 lifetime--
 if (lifetime < 0)
 {

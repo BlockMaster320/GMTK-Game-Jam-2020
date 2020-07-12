@@ -7,6 +7,14 @@ if (random(spawnSpd) < sniperSpawn)
 	tower.towerType = towerTypes.sniper
 }
 
+if (random(spawnSpd) < shotgunSpawn)
+{
+	spawnOff = 150
+	minOff = 40
+	var tower = SpawnTower(spawnOff)
+	tower.towerType = towerTypes.shotgun
+}
+
 if (random(spawnSpd) < circularSpawn)
 {
 	spawnOff = 80
@@ -31,7 +39,7 @@ if (random(spawnSpd) < rotazionSpawn)
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
 
-spawnSpd = max(spawnSpd - 0.002,20)
+spawnSpd = max(spawnSpd - 0.001,20)
 
 global.currentScore += scoreMultiplier
 global.highscore = max(global.highscore,global.currentScore)
@@ -45,8 +53,8 @@ if (upgradeAvailable)
 	with (oUpgrade) instance_destroy()
 	upgradeAvailable = false
 	
-	var upgradeSpawnOff = 500
-	var fromPlayerOff = 300
+	var upgradeSpawnOff = 200
+	var fromPlayerOff = 400
 	
 	var pX = oPlayer.x
 	var pY = oPlayer.y
@@ -60,37 +68,40 @@ if (upgradeAvailable)
 		{
 			if (i != 0 and j != 0)
 			{
-				do
+				repeat(100)
 				{
 					var spawnX = random_range(pX + (fromPlayerOff * i) - upgradeSpawnOff,
 												pX + (fromPlayerOff * i) + upgradeSpawnOff)
 					var spawnY = random_range(pY + (fromPlayerOff * j) - upgradeSpawnOff,
 												pY + (fromPlayerOff * j) + upgradeSpawnOff)
-					spawnX -= spawnX % TL_SIZE
-					spawnY -= spawnY % TL_SIZE
+					spawnX -= spawnX % TL_SIZE + TL_SIZE / 2
+					spawnY -= spawnY % TL_SIZE + TL_SIZE / 2
+					if (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
+					break
 				}
-				until (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
-				while (tilemap_get_at_pixel(tilemap,spawnX,spawnY) or spawnX > room_width)
+				while (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
 				{
 					spawnX += TL_SIZE * i
 					spawnY += TL_SIZE * j
 				}
-				
-				instance_create_layer(spawnX,spawnY,"Instances",oUpgrade)
-				
-				repeat(2)
+				if (spawnX > 0 and spawnX < room_width and spawnY > 0 and spawnY < room_height)
 				{
-					do
+					instance_create_layer(spawnX,spawnY,"Instances",oUpgrade)
+				
+					repeat(1)
 					{
-						var spawnX_ = random_range(spawnX - 200,spawnX + 200)
-						var spawnY_ = random_range(spawnX - 200,spawnX + 200)
-						spawnX_ -= spawnX_ % TL_SIZE
-						spawnY_ -= spawnY_ % TL_SIZE
+						do
+						{
+							var spawnX_ = random_range(spawnX - 50,spawnX + 50)
+							var spawnY_ = random_range(spawnY - 50,spawnY + 50)
+							spawnX_ -= spawnX_ % TL_SIZE
+							spawnY_ -= spawnY_ % TL_SIZE
+						}
+						until (!tilemap_get_at_pixel(tilemap,spawnX_,spawnY_) and place_free(spawnX_,spawnY_))
+						var tower = instance_create_layer(spawnX_,spawnY_,"Instances",oTower)
+						tower.lifeTime = 9999
+						tower.towerType = irandom_range(0,towerTypes.length)
 					}
-					until (!tilemap_get_at_pixel(tilemap,spawnX_,spawnY_) and place_free(spawnX_,spawnY_))
-					var tower = instance_create_layer(spawnX,spawnY,"Instances",oTower)
-					tower.lifeTime = 9999
-					tower.towerType = irandom_range(0,towerTypes.length)
 				}
 			}
 		}

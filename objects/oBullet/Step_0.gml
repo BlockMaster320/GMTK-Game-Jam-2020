@@ -2,7 +2,7 @@
 speed = movementSpeed * global.timeSpeed;
 if (rotSpd > 0)
 {
-	direction += rotSpd * random_range(-1,1)
+	direction += rotSpd * random_range(-1,1) * global.timeSpeed
 	image_angle = direction
 }
 bulletSize = 0;

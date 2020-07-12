@@ -1,6 +1,10 @@
-if (justStarted)
+if (justStarted and towerState = TOWER_STATE.active)
 {
+	part_type_speed(shootSmokePart,.6 * global.timeSpeed,2.5 * global.timeSpeed,-.05,0)
+	part_particles_create(shootSmokePart,x,y,shootSmokeSys,20)
 	justStarted = false
+	
+	image_speed = 0
 	
 	switch (towerType)
 	{
@@ -36,6 +40,14 @@ if (justStarted)
 			bulletSpeed = 1.5;
 			bulletSize = 1;
 			cooldown = 150;
+		}
+		break;
+		case towerTypes.shotgun:
+		{
+			sprite_index = sEnemy1
+			bulletSize = 1;
+			cooldown = 60;
+			bulletNumber = 4
 		}
 		break;
 	}

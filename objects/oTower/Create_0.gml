@@ -15,7 +15,7 @@ rotationSpeed = 0;
 
 justStarted = true
 
-lifeTime = oGameManager.spawnSpd * 15
+lifeTime = oGameManager.spawnSpd * 25
 
 enum TOWER_STATE
 {
@@ -29,6 +29,6 @@ shootSmokeSys = part_system_create()
 part_system_depth(shootSmokeSys,250)
 shootSmokePart = part_type_create()
 part_type_sprite(shootSmokePart,sShootPart,0,0,1)
-part_type_direction(shootSmokePart,rotation-20,rotation+20,0,0)
+part_type_direction(shootSmokePart,rotation-20,rotation+20,10,5)
 part_type_speed(shootSmokePart,.6,2.5,-.05,0)
 part_type_alpha2(shootSmokePart,1,0)

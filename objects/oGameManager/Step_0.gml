@@ -30,5 +30,7 @@ if (random(spawnSpd) < rotazionSpawn)
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
 
-spawnSpd = max(spawnSpd - 0.01,0)
+spawnSpd = max(spawnSpd - 0.002,20)
 
+global.currentScore += scoreMultiplier
+global.highscore = max(global.highscore,global.currentScore)

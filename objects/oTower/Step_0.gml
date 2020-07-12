@@ -16,12 +16,11 @@ if (towerState = TOWER_STATE.active)
 					_newBullet.direction = (360 / bulletNumber) * _i;
 					_newBullet.image_angle = _newBullet.direction;
 					_newBullet.bulletSize = bulletSize;
-					rotation = image_angle
 				
 					image_xscale = 1;
 					image_yscale = 1;
 					
-					part_type_direction(shootSmokePart,(360 / bulletNumber) * _i,(360 / bulletNumber) * _i,0,0)
+					part_type_direction(shootSmokePart,(360 / bulletNumber) * _i,(360 / bulletNumber) * _i,2,5)
 					part_particles_create(shootSmokeSys,x, bulletOrigin,shootSmokePart,5)
 				}
 				cooldownCount = 0;
@@ -38,9 +37,8 @@ if (towerState = TOWER_STATE.active)
 				_newBullet.direction = rotation;
 				_newBullet.image_angle = _newBullet.direction;
 				_newBullet.bulletSize = bulletSize;
-				rotation = image_angle
 				
-				part_type_direction(shootSmokePart,rotation-20,rotation+20,0,0)
+				part_type_direction(shootSmokePart,rotation-20,rotation+20,2,5)
 				part_particles_create(shootSmokeSys,bulletOriginX,bulletOriginY,shootSmokePart,5)
 			
 				cooldownCount = 0;
@@ -60,9 +58,8 @@ if (towerState = TOWER_STATE.active)
 				_newBullet.direction = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
 				_newBullet.image_angle = _newBullet.direction;
 				_newBullet.bulletSize = bulletSize;
-				rotation = image_angle
 				
-				part_type_direction(shootSmokePart,_newBullet.direction-20,_newBullet.direction+20,0,0)
+				part_type_direction(shootSmokePart,_newBullet.direction-20,_newBullet.direction+20,2,5)
 				part_particles_create(shootSmokeSys,bulletOriginX,bulletOriginY,shootSmokePart,5)
 			
 				cooldownCount = 0;
@@ -86,7 +83,7 @@ if (towerState = TOWER_STATE.active)
 					rotation = image_angle
 					_newBullet.rotSpd = 10
 					
-					part_type_direction(shootSmokePart,_newBullet.direction-20,_newBullet.direction+20,0,0)
+					part_type_direction(shootSmokePart,_newBullet.direction-20,_newBullet.direction+20,2,5)
 					part_particles_create(shootSmokeSys,bulletOriginX,bulletOriginY,shootSmokePart,5)
 				}
 			
@@ -103,6 +100,7 @@ if (towerState = TOWER_STATE.active)
 	cooldownCount += 1 * global.timeSpeed;
 	rotation += rotationSpeed * global.timeSpeed;
 	image_angle += rotationSpeed * global.timeSpeed;
+	rotation = image_angle
 	lifeTime--
 	if (lifeTime < 0) instance_destroy()
 }

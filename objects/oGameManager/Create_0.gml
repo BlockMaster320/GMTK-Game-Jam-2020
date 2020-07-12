@@ -11,9 +11,9 @@ enum towerTypes
 global.pause = false;
 global.timeSpeed = 1;
 
-sniperSpawn = .03
-spiralSpawn = .01
-circularSpawn = .1
+sniperSpawn = .04
+spiralSpawn = .08
+circularSpawn = .02
 rotazionSpawn = .06
 
 spawnOffDef = 150
@@ -29,3 +29,5 @@ tilemap = layer_tilemap_get_id("tlWalls")
 ini_open("save.ini")
 global.highscore = ini_read_real("Save","Highscore",0)
 ini_close()
+global.currentScore = 0
+scoreMultiplier = .0005

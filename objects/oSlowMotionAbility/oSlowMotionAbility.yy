@@ -1,18 +1,28 @@
 {
-    "id": "9e88f2bc-c787-4062-a09e-ced21a07f1bd",
+    "id": "552dfef0-30a7-4e2c-be96-f0e5dc21baec",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oUpgrade",
+    "name": "oSlowMotionAbility",
     "eventList": [
         {
-            "id": "2271103b-476b-4cca-a8ec-824d81f978a7",
+            "id": "4cc05779-529d-478d-8c2b-c9766355bd64",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "9e88f2bc-c787-4062-a09e-ced21a07f1bd"
+            "eventtype": 0,
+            "m_owner": "552dfef0-30a7-4e2c-be96-f0e5dc21baec"
+        },
+        {
+            "id": "791b16c1-5de6-4d21-958f-025d3c1b4bea",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "552dfef0-30a7-4e2c-be96-f0e5dc21baec"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -33,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "6ea0a25f-3eca-49f8-b434-7bf8aa4576d0",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

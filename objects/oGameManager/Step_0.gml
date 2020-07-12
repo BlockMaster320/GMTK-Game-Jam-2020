@@ -1,5 +1,6 @@
 #region TurretSpawn
-if (random(spawnSpd) < sniperSpawn)
+var spawnSpdCorrect = spawnSpd / global.timeSpeed
+if (random(spawnSpdCorrect) < sniperSpawn)
 {
 	spawnOff = 300
 	minOff = 100
@@ -7,7 +8,7 @@ if (random(spawnSpd) < sniperSpawn)
 	tower.towerType = towerTypes.sniper
 }
 
-if (random(spawnSpd) < shotgunSpawn)
+if (random(spawnSpdCorrect) < shotgunSpawn)
 {
 	spawnOff = 150
 	minOff = 40
@@ -15,7 +16,7 @@ if (random(spawnSpd) < shotgunSpawn)
 	tower.towerType = towerTypes.shotgun
 }
 
-if (random(spawnSpd) < circularSpawn)
+if (random(spawnSpdCorrect) < circularSpawn)
 {
 	spawnOff = 80
 	minOff = minOffDef
@@ -23,7 +24,7 @@ if (random(spawnSpd) < circularSpawn)
 	tower.towerType = towerTypes.circular
 }
 
-if (random(spawnSpd) < spiralSpawn)
+if (random(spawnSpdCorrect) < spiralSpawn)
 {
 	spawnOff = spawnOffDef
 	minOff = minOffDef
@@ -31,7 +32,7 @@ if (random(spawnSpd) < spiralSpawn)
 	tower.towerType = towerTypes.spiral
 }
 
-if (random(spawnSpd) < rotazionSpawn)
+if (random(spawnSpdCorrect) < rotazionSpawn)
 {
 	spawnOff = 100
 	minOff = minOffDef
@@ -39,10 +40,11 @@ if (random(spawnSpd) < rotazionSpawn)
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
 
-spawnSpd = max(spawnSpd - 0.001,20)
+spawnSpd = max(spawnSpd - 0.003,20)
 
-global.currentScore += scoreMultiplier
+global.currentScore += scoreMultiplier * (1-gameEnded)
 global.highscore = max(global.highscore,global.currentScore)
+global.prevScore = global.currentScore
 #endregion
 
 #region Upgrade spawn
@@ -54,7 +56,7 @@ if (upgradeAvailable)
 	upgradeAvailable = false
 	
 	var upgradeSpawnOff = 200
-	var fromPlayerOff = 400
+	var fromPlayerOff = 300
 	
 	var pX = oPlayer.x
 	var pY = oPlayer.y
@@ -68,7 +70,7 @@ if (upgradeAvailable)
 		{
 			if (i != 0 and j != 0)
 			{
-				repeat(100)
+				repeat(40)
 				{
 					var spawnX = random_range(pX + (fromPlayerOff * i) - upgradeSpawnOff,
 												pX + (fromPlayerOff * i) + upgradeSpawnOff)
@@ -100,7 +102,7 @@ if (upgradeAvailable)
 						until (!tilemap_get_at_pixel(tilemap,spawnX_,spawnY_) and place_free(spawnX_,spawnY_))
 						var tower = instance_create_layer(spawnX_,spawnY_,"Instances",oTower)
 						tower.lifeTime = 9999
-						tower.towerType = irandom_range(0,towerTypes.length)
+						tower.towerType = irandom_range(0,towerTypes.length-1)
 					}
 				}
 			}

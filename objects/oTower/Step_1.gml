@@ -46,7 +46,7 @@ if (justStarted and towerState = TOWER_STATE.active)
 		{
 			sprite_index = sEnemy1
 			bulletSize = 1;
-			cooldown = 60;
+			cooldown = 100;
 			bulletNumber = 4
 		}
 		break;

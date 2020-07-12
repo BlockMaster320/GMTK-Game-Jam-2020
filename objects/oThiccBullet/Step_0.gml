@@ -17,4 +17,12 @@ if (place_meeting(x, y, oTower))
 {
 	var _towerCollider = instance_place(x, y, oTower);
 	instance_destroy(_towerCollider);
+	
+	var nt = instance_nearest(x,y,oTower)
+	if (nt != noone) direction = point_direction(x,y,nt.x,nt.y)
+	image_angle = direction
+	audio_play_sound(sndSpawn,0,0)
+	
 }
+lifetime--
+if (lifetime < 0) instance_destroy()

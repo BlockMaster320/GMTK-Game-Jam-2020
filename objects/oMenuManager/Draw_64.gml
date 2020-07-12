@@ -31,11 +31,12 @@ draw_self()
 xx = room_width * .65
 yy = room_height * .15
 draw_set_color(c_white)
-draw_text_transformed(xx,yy,"HIGHSCORE: " + string(highscore),2,2,0)
+draw_text_transformed(xx,yy-15,"HIGHSCORE: " + string(highscore),2,2,0)
+draw_text_transformed(xx,yy+5,"SCORE: " + string(prevScore_),2,2,0)
 
 xx = 160
 yy = 80
-space = 55
+space = 53
 var spriteOff = 10
 for (var i = 0; i < array_length_1d(towerTypesMenu); i++)
 {
@@ -44,6 +45,18 @@ for (var i = 0; i < array_length_1d(towerTypesMenu); i++)
 	draw_sprite(towerTypesSprites[i],0,xx + (space * i), yy - spriteOff+sin(current_time/1000+i*3))
 }
 
-
+if (PFselected != selected) audio_play_sound(sndMenuClick,0,0)
+PFselected = selected
+draw_set_halign(fa_left)
+draw_set_valign(fa_left)
+draw_text_transformed(xx+295,yy-60,@"Gain score by getting
+upgrade bateries and
+destroying enemies
+(by touching them),
+but be cautious, every
+time you take a hit,
+you lose a key.
+Play until you lose
+your whole keyboard!",.5,.5,0)
 
 

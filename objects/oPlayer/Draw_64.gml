@@ -52,6 +52,12 @@ for (var _i = 0; _i < array_length_1d(keyArray); _i ++)
 			if (_keyInfo[0] == _abilityKeyInfo[0])
 				_abilityKey = true;
 		}
+		for (var _c = 0; _c < ds_list_size(ability3); _c ++)
+		{
+			var _abilityKeyInfo = ability3[| _c];
+			if (_keyInfo[0] == _abilityKeyInfo[0])
+				_abilityKey = true;
+		}
 		
 		if (_keyInfo[0] = keyRight[0] || _keyInfo[0] = keyLeft[0] || _keyInfo[0] = keyUp[0] || _keyInfo[0] = keyDown[0] || _abilityKey)
 		{
@@ -124,6 +130,9 @@ if (global.pause)
 			case 1:
 				var _abilityName = "TOWER DESTROYER!";
 			break;
+			case 2:
+				var _abilityName = "SLOW MOTION!";
+			break;
 		}
 	
 		var _viewToGuiWidthRation = display_get_gui_width() / camera_get_view_width(view_camera[0]);
@@ -138,4 +147,6 @@ if (global.gameEnd)
 {
 	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(100, 1), "YOU RAN", gdva(5, 0), gdva(5, 1), 0, c_white, c_white, c_white, c_white, 1);
 	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(60, 1), "OUT OF CONTROL!", gdva(5, 0), gdva(5, 1), 0, c_red, c_red, c_red, c_red, 1);
+	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2, (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(40, 1), "SCORE: " + string(global.currentScore), gdva(5, 0), gdva(5, 1), 0, c_white, c_white, c_white, c_white, 1);
+	gameEnded = true
 }

@@ -44,13 +44,29 @@ if (!global.pause)
 			ds_list_delete(ability2, _k);
 		}
 	}
+	
+	for (var _k = 0; _k < ds_list_size(ability3); _k ++)
+	{
+		var _keyInfo = ability3[| _k];
+		if (keyboard_check_pressed(ord(_keyInfo[0])))
+		{
+			ability3Cast = true;
+			_keyInfo[1] = false;
+			keyArray[_keyInfo[2]] = _keyInfo;
+			ds_list_delete(ability3, _k);
+		}
+	}
 }
 
 #region Collision
 moveDir = point_direction(0,0,right - left,down - up)
 var moving = (right - left != 0) or (down - up != 0)
-hsp = round(lengthdir_x(spd * moving * global.timeSpeed ,moveDir))
-vsp = round(lengthdir_y(spd * moving * global.timeSpeed,moveDir))
+hsp = round(lengthdir_x(spd * moving,moveDir))
+vsp = round(lengthdir_y(spd * moving,moveDir))
+
+var dir = point_direction(x,y,x+hsp,y+vsp) - 180
+part_type_direction(dronePart,dir-100,dir+100,random_range(-5,5),5)
+if (current_time % 2 and moving) part_particles_create(dronePart,x+TL_SIZE/2,y+TL_SIZE/2,dronePartSys,1)
 
 var bboxSide
 if (hsp > 0) bboxSide = bbox_right; else bboxSide = bbox_left
@@ -110,7 +126,7 @@ if (playerAnimationFlipper >= 1)
 
 #region Hit
 
-if (keyboard_check_pressed(vk_enter)) hit = true
+//if (keyboard_check_pressed(vk_enter)) hit = true
 
 if (hit)
 {
@@ -128,7 +144,7 @@ for (var _o = 0; _o < array_length_1d(keyArray); _o ++)
 	var _keyInfo = keyArray[_o];
 	_activeKeysCount += _keyInfo[1];
 }
-if (_activeKeysCount <= 4 + ds_list_size(ability1) + ds_list_size(ability2))
+if (_activeKeysCount <= 4 + ds_list_size(ability1) + ds_list_size(ability2) + ds_list_size(ability3))
 {
 	keyChange = false;
 	addAbilityKey = false;
@@ -152,6 +168,12 @@ if (keyChange || addAbilityKey)
 	for (var _c = 0; _c < ds_list_size(ability2); _c ++)
 	{
 		var _abilityKeyInfo = ability2[| _c];
+		if (_newKey == _abilityKeyInfo[0])
+			_abilityKey = true;
+	}
+	for (var _c = 0; _c < ds_list_size(ability3); _c ++)
+	{
+		var _abilityKeyInfo = ability3[| _c];
 		if (_newKey == _abilityKeyInfo[0])
 			_abilityKey = true;
 	}
@@ -205,6 +227,9 @@ if (keyChange || addAbilityKey)
 						case 1:
 							ds_list_add(ability2, _keyInfo);
 						break;
+						case 2:
+							ds_list_add(ability3, _keyInfo);
+						break;
 						
 					}
 					
@@ -215,7 +240,7 @@ if (keyChange || addAbilityKey)
 			}
 		}
 		show_debug_message(_activeKeysCount);
-		show_debug_message(4 + ds_list_size(ability1) + ds_list_size(ability2));
+		show_debug_message(4 + ds_list_size(ability1) + ds_list_size(ability2) + ds_list_size(ability3));
 	}
 }
 
@@ -225,8 +250,9 @@ if (ability1Cast)
 	var _newAbility = instance_create_layer(x + sprite_width / 2, y + sprite_height / 2, "Instances", oAbility);
 	_newAbility.abilityType = 0;
 	
-	//global.screenShake = 3;
+	global.screenShake = 10
 	ability1Cast = false;
+	audio_play_sound(sndBlank,0,0)
 }
 
 if (ability2Cast)
@@ -239,8 +265,16 @@ if (ability2Cast)
 		_newBullet.image_angle = _newBullet.direction;
 		_newBullet.towerPosition = [_nearestTower.x, _nearestTower.y];
 	
+		global.screenShake = 10
+		audio_play_sound(sndTowerDestroy,0,0)
 		ability2Cast = false;
 	}
+}
+if (ability3Cast)
+{
+	var slowMoAbility = instance_create_layer(0,0,"Instances",oSlowMotionAbility)
+	slowMoAbility.slowMoSound = audio_play_sound(sndSlowMo,0,1)
+	ability3Cast = false
 }
 /*
 show_debug_message("last key: " + string(lastKeyInput));
@@ -253,11 +287,11 @@ show_debug_message("down: " + keyDown[0]);*/
 show_debug_message(keyAbility2);
 show_debug_message(keyAbility3);*/
 
-if (keyboard_check_pressed(vk_enter))
+/*if (keyboard_check_pressed(vk_enter))
 {
 	global.pause = true;
 	keyChange = true;
-}
+}*/
 #endregion
 
 //Slow || Speed Up Time
@@ -280,8 +314,12 @@ image_speed = global.timeSpeed;
 //Trigger KeyChange on Collision With Bullet
 if (place_meeting(x, y, oBullet))
 {
+	audio_play_sound(sndHit,0,0)
+	
 	global.pause = true;
 	keyChange = true;
+	
+	global.screenShake += 10
 	
 	var _bulletCollider = instance_place(x, y, oBullet);
 	instance_destroy(_bulletCollider);
@@ -292,20 +330,26 @@ if (place_meeting(x, y, oBullet))
 
 if (place_meeting(x,y,oUpgrade))
 {
+	audio_play_sound(sndUpgrade,0,0)
 	global.pause = true;
 	addAbilityKey = true;
 	abilityType = 0;
 	
+	abilityType = irandom_range(0,2)
+	addAbilityKey = true
+	
 	with(oGameManager)
 	{
 		oGameManager.upgradeAvailable = true
-		oGameManager.scoreMultiplier *= 3
+		oGameManager.scoreMultiplier *= 2
 	}
 }
 
 //Destroy Tower on Collision With Player
 if (place_meeting(x, y, oTower))
 {
+	oGameManager.scoreMultiplier *= 1.2
 	var _towerCollider = instance_place(x, y, oTower)
 	instance_destroy(_towerCollider);
+	audio_play_sound(sndSpawn,0,0)
 }

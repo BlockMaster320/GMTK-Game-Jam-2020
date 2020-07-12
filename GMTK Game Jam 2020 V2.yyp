@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "02d568d8-2f11-4612-bdbd-3a05cfa6ca8d",
+            "Value": {
+                "id": "a850620a-6f04-4dd9-8cd2-179df09d2db9",
+                "resourcePath": "sounds\\sndShoot\\sndShoot.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "06dcbec6-ac65-44f8-a189-20bd74be22f4",
             "Value": {
                 "id": "780b0571-f38f-439f-8fed-b95f0ace9e35",
@@ -76,6 +84,14 @@
                 "id": "94f890f0-e60f-4ce3-80f9-027130dd936f",
                 "resourcePath": "sprites\\sPlayerMove\\sPlayerMove.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "20f3389d-b839-4958-bd88-5ea7f2faf04e",
+            "Value": {
+                "id": "dc69e1f8-7e94-489b-bdfe-e2945c6c1687",
+                "resourcePath": "sounds\\sndUpgrade\\sndUpgrade.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -147,6 +163,22 @@
             "Value": {
                 "id": "c9289d0d-df8e-455a-864c-73eb7c8bf7be",
                 "resourcePath": "objects\\oTower\\oTower.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "52287b80-2b14-43b4-8bb6-7b9b9fb923d2",
+            "Value": {
+                "id": "ed21ad73-f5b8-485c-979e-beaac7918316",
+                "resourcePath": "sounds\\sndMenuClick\\sndMenuClick.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "552dfef0-30a7-4e2c-be96-f0e5dc21baec",
+            "Value": {
+                "id": "d1fb3012-5d29-4189-bf9b-078e387bc2e2",
+                "resourcePath": "objects\\oSlowMotionAbility\\oSlowMotionAbility.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -255,6 +287,14 @@
             }
         },
         {
+            "Key": "96f2924a-7b11-4fd8-bc15-44eea6879b81",
+            "Value": {
+                "id": "7083659c-c0c8-43e4-aea9-ff997f2bb0e8",
+                "resourcePath": "sounds\\sndSpawn\\sndSpawn.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "9b56fc44-4983-4a92-a9e6-2237e29999cf",
             "Value": {
                 "id": "49c6017c-645d-4566-aa71-2aa7bef405e7",
@@ -359,6 +399,14 @@
             }
         },
         {
+            "Key": "c7b90ab8-3123-4bc3-bbde-938d4996d28f",
+            "Value": {
+                "id": "1d88b1ad-5b16-4a2f-8027-fcd59ca4b692",
+                "resourcePath": "sounds\\sndHit\\sndHit.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "39f9c567-caf2-496b-9879-071ddb75fc43",
@@ -388,6 +436,22 @@
                 "id": "b332f27f-0bda-451d-a6ec-518065226b50",
                 "resourcePath": "scripts\\gdva\\gdva.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d56d7b23-5308-4cf4-be90-09d1df113d17",
+            "Value": {
+                "id": "39adc7e1-5102-4e45-9871-1414c8e0762c",
+                "resourcePath": "sounds\\sndMenuSndtrck\\sndMenuSndtrck.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "d9ce99b8-fecb-46a4-8996-f8a790544f29",
+            "Value": {
+                "id": "892a097c-837e-47d3-954a-acf0c02426c6",
+                "resourcePath": "sounds\\sndTowerDestroy\\sndTowerDestroy.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -431,11 +495,27 @@
             }
         },
         {
+            "Key": "f19ad9a4-f710-4409-a7d5-b33420f04c81",
+            "Value": {
+                "id": "c87397ca-02f5-445e-ada6-a83a0bc6e942",
+                "resourcePath": "sounds\\sndBlank\\sndBlank.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "25af92c7-cb9a-43b6-b7a3-6ecf94dc5306",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "fb1e0fe8-3846-437b-80b9-7341697546db",
+            "Value": {
+                "id": "d8ab3c06-527f-42c4-bba8-21530c5e9a88",
+                "resourcePath": "sounds\\sndSlowMo\\sndSlowMo.yy",
+                "resourceType": "GMSound"
             }
         },
         {

@@ -8,8 +8,10 @@ if (towerState = TOWER_STATE.active)
 	{
 		case towerTypes.circular:
 		{
-			if (cooldownCount >= cooldown and point_distance(x,y,oPlayer.x,oPlayer.y) < 400)
+			if (cooldownCount >= cooldown and point_distance(x,y,oPlayer.x,oPlayer.y) < 200)
 			{
+				var snd = audio_play_sound(sndShoot,0,0)
+				audio_sound_gain(snd,1-(point_distance(x,y,oPlayer.x,oPlayer.y)/600),0)
 				for (var _i = 0; _i < bulletNumber; _i ++)
 				{
 					var _newBullet = instance_create_layer(x, bulletOrigin, "Instances", oBullet);
@@ -33,6 +35,8 @@ if (towerState = TOWER_STATE.active)
 		{
 			if (cooldownCount >= cooldown and point_distance(x,y,oPlayer.x,oPlayer.y) < 300)
 			{
+				var snd = audio_play_sound(sndShoot,0,0)
+				audio_sound_gain(snd,1-(point_distance(x,y,oPlayer.x,oPlayer.y)/600),0)
 				var _newBullet = instance_create_layer(bulletOriginX, bulletOriginY, "Instances", oBullet);
 				_newBullet.movementSpeed = bulletSpeed;
 				_newBullet.direction = rotation;
@@ -54,6 +58,8 @@ if (towerState = TOWER_STATE.active)
 		{
 			if (cooldownCount >= cooldown)
 			{
+				var snd = audio_play_sound(sndShoot,0,0)
+				audio_sound_gain(snd,1-(point_distance(x,y,oPlayer.x,oPlayer.y)/600),0)
 				var _newBullet = instance_create_layer(bulletOriginX, bulletOriginY, "Instances", oBullet);
 				_newBullet.movementSpeed = bulletSpeed;
 				_newBullet.direction = point_direction(x, bulletOrigin, oPlayer.x + oPlayer.sprite_width / 2, oPlayer.y + oPlayer.sprite_height / 2);
@@ -75,6 +81,8 @@ if (towerState = TOWER_STATE.active)
 		{
 			if (cooldownCount >= cooldown and point_distance(x,y,oPlayer.x,oPlayer.y) < 200)
 			{
+				var snd = audio_play_sound(sndShoot,0,0)
+				audio_sound_gain(snd,1-(point_distance(x,y,oPlayer.x,oPlayer.y)/600),0)
 				repeat(2)
 				{
 					var _newBullet = instance_create_layer(bulletOriginX, bulletOriginY, "Instances", oBullet);
@@ -100,6 +108,8 @@ if (towerState = TOWER_STATE.active)
 		{
 			if (cooldownCount >= cooldown and point_distance(x,y,oPlayer.x,oPlayer.y) < 100)
 			{
+				var snd = audio_play_sound(sndShoot,0,0)
+				audio_sound_gain(snd,1-(point_distance(x,y,oPlayer.x,oPlayer.y)/600),0)
 				repeat(bulletNumber)
 				{
 					var _newBullet = instance_create_layer(bulletOriginX, bulletOriginY, "Instances", oBullet);
@@ -120,8 +130,8 @@ if (towerState = TOWER_STATE.active)
 		}
 		break;
 	}
-	image_xscale = max(image_xscale - 0.001 * global.timeSpeed,.4)
-	image_yscale = max(image_yscale - 0.001 * global.timeSpeed,.4)
+	image_xscale = max(image_xscale - 0.001 * global.timeSpeed,.7)
+	image_yscale = max(image_yscale - 0.001 * global.timeSpeed,.7)
 	cooldownCount += 1 * global.timeSpeed;
 	rotation += rotationSpeed * global.timeSpeed;
 	image_angle += rotationSpeed * global.timeSpeed;

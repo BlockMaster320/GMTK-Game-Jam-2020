@@ -1,7 +1,7 @@
 targetX = oPlayer.x - viewW / 2
 targetY = oPlayer.y - viewH / 2 + 20
 
-if (keyboard_check_pressed(vk_enter)) global.screenShake = 10
+//if (keyboard_check_pressed(vk_enter)) global.screenShake = 10
 
 x += random_range(-global.screenShake,global.screenShake)
 y += random_range(-global.screenShake,global.screenShake)

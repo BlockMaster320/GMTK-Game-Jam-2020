@@ -31,6 +31,7 @@ tilemap = layer_tilemap_get_id("tlWalls")
 
 ini_open("save.ini")
 global.highscore = ini_read_real("Save","Highscore",0)
+global.prevScore = ini_read_real("Save","Score",0)
 ini_close()
 global.currentScore = 0
 scoreMultiplier = .0005
@@ -38,6 +39,8 @@ scoreMultiplier = .0005
 upgradeAvailable = true
 centerSpawnPointX = 0
 centerSpawnPointY = 0
+
+gameEnded = false
 
 #region Shader
 surfPing = -1
@@ -48,15 +51,15 @@ u_sigma = shader_get_uniform(shBlur,"sigma")
 u_texelSize = shader_get_uniform(shBlur,"texelSize")
 u_blurVector = shader_get_uniform(shBlur,"blurVector")
 
-guiW_ = display_get_gui_width() * 2
-guiH_ = display_get_gui_height() * 2
+guiW_ = display_get_gui_width()
+guiH_ = display_get_gui_height()
 texelW = 1 / guiW_
 texelH = 1 / guiH_
 
 blurSteps = 3
 sigma = .5
 
-surfScale = 2
+surfScale = 1
 PFsurfScale = surfScale
 
 texFilter = true

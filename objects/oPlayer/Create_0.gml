@@ -34,19 +34,22 @@ keyChange = false;
 keyboardVisibility = 0.5;
 
 //Set Key Input Variables
-keyRight = keyArray[14];
-keyLeft = keyArray[12];
-keyUp = keyArray[3];
-keyDown = keyArray[13];
+keyRight = keyArray[12];
+keyLeft = keyArray[10];
+keyUp = keyArray[1];
+keyDown = keyArray[11];
 
 //Set Ability Variables
 addAbilityKey = false;
 ability1 = ds_list_create();
 ability2 = ds_list_create();
-ds_list_add(ability1, keyArray[1]);
+ability3 = ds_list_create();
+/*ds_list_add(ability1, keyArray[1]);
 ds_list_add(ability2, keyArray[0]);
+ds_list_add(ability3, keyArray[2]);*/
 ability1Cast = false;
 ability2Cast = false;
+ability3Cast = false;
 
 //Set Global Pause Variable
 global.pause = false;
@@ -62,3 +65,9 @@ do
 	y -= y % TL_SIZE;
 }
 until (!tilemap_get_at_pixel(tilemap, x, y));
+
+dronePartSys = part_system_create()
+part_system_depth(dronePartSys,250)
+dronePart = part_type_create()
+part_type_alpha2(dronePart,1,0)
+part_type_speed(dronePart,.5,1.5,.1,0)

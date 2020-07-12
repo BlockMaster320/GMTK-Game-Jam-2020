@@ -5,4 +5,4 @@ abilityType = 0;
 ability1Speed = 2;
 ability1Alpha = 1;
 ability1Radius = 0;
-ability1MaxRadius = 40;
+ability1MaxRadius = 180;

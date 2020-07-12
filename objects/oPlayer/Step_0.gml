@@ -249,5 +249,9 @@ if (place_meeting(x,y,oUpgrade))
 	addAbilityKey = true;
 	abilityType = 0;
 	
-	oGameManager.upgradeAvailable = true
+	with(oGameManager)
+	{
+		oGameManager.upgradeAvailable = true
+		oGameManager.scoreMultiplier *= 3
+	}
 }

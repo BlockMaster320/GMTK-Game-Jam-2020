@@ -5,6 +5,7 @@ enum towerTypes
 	spiral,
 	sniper,
 	rotazionSpielzeug,
+	shotgun,
 	length
 }
 
@@ -16,13 +17,14 @@ sniperSpawn = .04
 spiralSpawn = .08
 circularSpawn = .02
 rotazionSpawn = .06
+shotgunSpawn = .005
 
 spawnOffDef = 150
 spawnOff = spawnOffDef
 minOffDef = 20
 minOff = minOffDef
 
-spawnSpd = 100	//100 - default, <100 - rychlejší spawn
+spawnSpd = 130	//100 - default, <100 - rychlejší spawn
 
 randomize()
 tilemap = layer_tilemap_get_id("tlWalls")

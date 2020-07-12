@@ -1,6 +1,8 @@
-if (justStarted)
+if (justStarted and towerState = TOWER_STATE.active)
 {
 	justStarted = false
+	
+	image_speed = 0
 	
 	switch (towerType)
 	{
@@ -36,6 +38,14 @@ if (justStarted)
 			bulletSpeed = 1.5;
 			bulletSize = 1;
 			cooldown = 150;
+		}
+		break;
+		case towerTypes.shotgun:
+		{
+			sprite_index = sEnemy1
+			bulletSize = 1;
+			cooldown = 60;
+			bulletNumber = 4
 		}
 		break;
 	}

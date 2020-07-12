@@ -7,6 +7,14 @@ if (random(spawnSpd) < sniperSpawn)
 	tower.towerType = towerTypes.sniper
 }
 
+if (random(spawnSpd) < shotgunSpawn)
+{
+	spawnOff = 150
+	minOff = 40
+	var tower = SpawnTower(spawnOff)
+	tower.towerType = towerTypes.shotgun
+}
+
 if (random(spawnSpd) < circularSpawn)
 {
 	spawnOff = 80
@@ -31,7 +39,7 @@ if (random(spawnSpd) < rotazionSpawn)
 	tower.towerType = towerTypes.rotazionSpielzeug
 }
 
-spawnSpd = max(spawnSpd - 0.002,20)
+spawnSpd = max(spawnSpd - 0.001,20)
 
 global.currentScore += scoreMultiplier
 global.highscore = max(global.highscore,global.currentScore)
@@ -66,8 +74,8 @@ if (upgradeAvailable)
 												pX + (fromPlayerOff * i) + upgradeSpawnOff)
 					var spawnY = random_range(pY + (fromPlayerOff * j) - upgradeSpawnOff,
 												pY + (fromPlayerOff * j) + upgradeSpawnOff)
-					spawnX -= spawnX % TL_SIZE
-					spawnY -= spawnY % TL_SIZE
+					spawnX -= spawnX % TL_SIZE + TL_SIZE / 2
+					spawnY -= spawnY % TL_SIZE + TL_SIZE / 2
 				}
 				until (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
 				while (tilemap_get_at_pixel(tilemap,spawnX,spawnY) or spawnX > room_width)

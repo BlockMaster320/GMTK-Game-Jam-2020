@@ -20,7 +20,7 @@ ini_close()
 
 display_set_gui_size(384,216)
 
-towerTypesMenu = ["Sniper","Curved shots","Spiral","Circular"]
-towerTypesSprites = [sEnemy2,sEnemy1,sEnemyBayblade,sEnemy3]
+towerTypesMenu = ["Sniper","Curved shots","Spiral","Circular","Shotgun","Upgrade"]
+towerTypesSprites = [sEnemy2,sEnemy1,sEnemyBayblade,sEnemy3,sShotgun,sUpgrade]
 
 buttonClick = false;

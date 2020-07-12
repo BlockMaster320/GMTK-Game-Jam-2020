@@ -17,3 +17,6 @@ menuWords = ["Play","Exit"]
 ini_open("save.ini")
 highscore = ini_read_real("Save","Highscore",0)
 ini_close()
+
+towerTypesMenu = ["Sniper","Curved shots","Spiral","Circular"]
+towerTypesSprites = [sEnemy2,sEnemy1,sEnemyBayblade,sEnemy3]

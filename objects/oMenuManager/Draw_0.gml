@@ -19,7 +19,22 @@ for (var i = 0; i < array_length_1d(menuWords); i++)
 }
 draw_self()
 
-var xx = room_width * .65
-var yy = room_height * .15
+xx = room_width * .65
+yy = room_height * .15
 draw_set_color(c_white)
-draw_text_transformed(xx,yy,"Highscore: " + string(highscore),3,3,0)
+draw_text_transformed(xx,yy,"HIGHSCORE: " + string(highscore),3,3,0)
+
+xx = 160
+yy = 80
+space = 55
+var spriteOff = 10
+for (var i = 0; i < array_length_1d(towerTypesMenu); i++)
+{
+	if (i = 2) {yy += 35; xx -= i * space}
+	draw_text_transformed(xx + (space * i),yy,towerTypesMenu[i],1,1,0)
+	draw_sprite(towerTypesSprites[i],0,xx + (space * i), yy - spriteOff)
+}
+
+
+
+

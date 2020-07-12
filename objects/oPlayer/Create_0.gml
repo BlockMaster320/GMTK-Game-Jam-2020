@@ -43,7 +43,6 @@ keyDown = keyArray[13];
 addAbilityKey = false;
 ability1 = ds_list_create();
 ability2 = ds_list_create();
-ds_list_add(ability1, keyArray[25]);
 ability1Cast = false;
 ability2Cast = false;
 

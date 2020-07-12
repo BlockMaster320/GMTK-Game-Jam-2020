@@ -245,5 +245,9 @@ if (place_meeting(x, y, oBullet))
 
 if (place_meeting(x,y,oUpgrade))
 {
+	global.pause = true;
+	addAbilityKey = true;
+	abilityType = 0;
+	
 	oGameManager.upgradeAvailable = true
 }

@@ -1,3 +1,4 @@
+/*
 var xx = room_width * .15
 var yy = room_height * .09
 var space = 40
@@ -42,4 +43,4 @@ for (var i = 0; i < array_length_1d(towerTypesMenu); i++)
 	if (i = 2) {yy += 35; xx -= i * space}
 	draw_text_transformed(xx + (space * i),yy,towerTypesMenu[i],1,1,0)
 	draw_sprite(towerTypesSprites[i],0,xx + (space * i), yy - spriteOff)
-}
+}*/

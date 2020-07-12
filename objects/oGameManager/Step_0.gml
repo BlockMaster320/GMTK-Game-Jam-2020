@@ -78,7 +78,7 @@ if (upgradeAvailable)
 					spawnY -= spawnY % TL_SIZE + TL_SIZE / 2
 				}
 				until (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
-				while (tilemap_get_at_pixel(tilemap,spawnX,spawnY) or spawnX > room_width)
+				while (tilemap_get_at_pixel(tilemap,spawnX,spawnY))
 				{
 					spawnX += TL_SIZE * i
 					spawnY += TL_SIZE * j

@@ -40,8 +40,8 @@ var spriteOff = 10
 for (var i = 0; i < array_length_1d(towerTypesMenu); i++)
 {
 	if (i = 3) {yy += 35; xx -= i * space}
-	draw_text_transformed(xx + (space * i),yy,towerTypesMenu[i],1,1,0)
-	draw_sprite(towerTypesSprites[i],0,xx + (space * i), yy - spriteOff)
+	draw_text_transformed(xx + (space * i),yy+sin(current_time/1000+i*3),towerTypesMenu[i],1,1,0)
+	draw_sprite(towerTypesSprites[i],0,xx + (space * i), yy - spriteOff+sin(current_time/1000+i*3))
 }
 
 

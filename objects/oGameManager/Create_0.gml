@@ -38,3 +38,33 @@ scoreMultiplier = .0005
 upgradeAvailable = true
 centerSpawnPointX = 0
 centerSpawnPointY = 0
+
+#region Shader
+surfPing = -1
+surfPong = -1
+
+u_blurSteps = shader_get_uniform(shBlur,"blurSteps")
+u_sigma = shader_get_uniform(shBlur,"sigma")
+u_texelSize = shader_get_uniform(shBlur,"texelSize")
+u_blurVector = shader_get_uniform(shBlur,"blurVector")
+
+guiW_ = display_get_gui_width() * 2
+guiH_ = display_get_gui_height() * 2
+texelW = 1 / guiW_
+texelH = 1 / guiH_
+
+blurSteps = 6
+sigma = .5
+
+surfScale = 2
+PFsurfScale = surfScale
+
+texFilter = true
+
+//bloom
+u_bloomThresholdTop = shader_get_uniform(shBloomPass,"bloomThresholdTop")
+u_bloomRange = shader_get_uniform(shBloomPass,"bloomRange")
+
+bloomThresholdTop = .5
+bloomRange = .1
+#endregion

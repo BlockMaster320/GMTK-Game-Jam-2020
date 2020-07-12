@@ -53,7 +53,7 @@ guiH_ = display_get_gui_height() * 2
 texelW = 1 / guiW_
 texelH = 1 / guiH_
 
-blurSteps = 6
+blurSteps = 3
 sigma = .5
 
 surfScale = 2

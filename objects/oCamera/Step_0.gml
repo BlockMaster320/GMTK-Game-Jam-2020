@@ -17,6 +17,6 @@ y = clamp(y,0,room_height - camH)
 camera_set_view_pos(cam,x,y)
 camera_set_view_angle(cam,rot)
 
-camW = lerp(camW,viewW,0.01)
+camW = lerp(camW,viewW,0.03)
 camH = camW / 16 * 9
 camera_set_view_size(cam,camW,camH)

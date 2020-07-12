@@ -4,7 +4,8 @@ enum towerTypes
 	circular,
 	spiral,
 	sniper,
-	rotazionSpielzeug
+	rotazionSpielzeug,
+	length
 }
 
 //Set Time Global Variables
@@ -31,3 +32,7 @@ global.highscore = ini_read_real("Save","Highscore",0)
 ini_close()
 global.currentScore = 0
 scoreMultiplier = .0005
+
+upgradeAvailable = true
+centerSpawnPointX = 0
+centerSpawnPointY = 0

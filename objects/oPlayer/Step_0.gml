@@ -184,3 +184,8 @@ if (place_meeting(x, y, oBullet))
 	var _bulletCollider = instance_place(x, y, oBullet);
 	instance_destroy(_bulletCollider);
 }
+
+if (place_meeting(x,y,oUpgrade))
+{
+	oGameManager.upgradeAvailable = true
+}

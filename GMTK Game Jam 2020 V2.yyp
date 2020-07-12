@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "6ea0a25f-3eca-49f8-b434-7bf8aa4576d0",
+            "Value": {
+                "id": "c1dfb945-9cda-45d4-afc6-3cd879b5df57",
+                "resourcePath": "sprites\\sUpgrade\\sUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
             "Value": {
                 "id": "435c9e8d-59e6-47fe-bf94-db37ac19a4d9",
@@ -244,6 +252,14 @@
                 "id": "934b681d-6e7d-462a-b5a7-e3266a28d091",
                 "resourcePath": "views\\9cd8c961-68ee-4333-b486-b367dd20f64d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9e88f2bc-c787-4062-a09e-ced21a07f1bd",
+            "Value": {
+                "id": "1a309189-99c5-4f30-b071-fa9ba58ef0ab",
+                "resourcePath": "objects\\oUpgrade\\oUpgrade.yy",
+                "resourceType": "GMObject"
             }
         },
         {

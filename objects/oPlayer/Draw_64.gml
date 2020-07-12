@@ -39,8 +39,25 @@ for (var _i = 0; _i < array_length_1d(keyArray); _i ++)
 	//Draw the Key
 	if (_keyInfo[1])
 	{
-		if (_keyInfo[0] = keyRight[0] || _keyInfo[0] = keyLeft[0] || _keyInfo[0] = keyUp[0] || _keyInfo[0] = keyDown[0] ||
-			_keyInfo[0] = keyAbility1[0] || _keyInfo[0] = keyAbility2[0] || _keyInfo[0] = keyAbility3[0])
+		var _abilityKey = false;
+		for (var _c = 0; _c < ds_list_size(ability1); _c ++)
+		{
+			var _abilityKeyInfo = ability1[| _c];
+			show_debug_message("1: " + _keyInfo[0])
+			show_debug_message("2: " + _abilityKeyInfo[0])
+			if (_keyInfo[0] == _abilityKeyInfo[0])
+				_abilityKey = true;
+		}
+		for (var _c = 0; _c < ds_list_size(ability2); _c ++)
+		{
+			var _abilityKeyInfo = ability2[| _c];
+			show_debug_message("1: " + _keyInfo[0])
+			show_debug_message("2: " + _abilityKeyInfo[0])
+			if (_keyInfo[0] == _abilityKeyInfo[0])
+				_abilityKey = true;
+		}
+		
+		if (_keyInfo[0] = keyRight[0] || _keyInfo[0] = keyLeft[0] || _keyInfo[0] = keyUp[0] || _keyInfo[0] = keyDown[0] || _abilityKey)
 		{
 			draw_sprite_ext(sKeyboard, 1, _drawX, _drawY - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_white, keyboardVisibility);
 			draw_sprite_ext(sKeyboard, _i + 2, _drawX, _drawY - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_dkgray, keyboardVisibility);
@@ -71,33 +88,45 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 if (global.pause)
 {
-	switch (lastKeyInput)
+	if (keyChange)
 	{
-		case 0:
-			var _inputToReplace = "RIGHT MOVEMENT!";
-		break;
-		case 1:
-			var _inputToReplace = "LEFT MOVEMENT!";
-		break;
-		case 2:
-			var _inputToReplace = "UP MOVEMENT!";
-		break;
-		case 3:
-			var _inputToReplace = "DOWN MOVEMENT!";
-		break;
-		case 4:
-			var _inputToReplace = "ABILITY 1!";
-		break;
-		case 5:
-			var _inputToReplace = "ABILITY 2!";
-		break;
-		case 6:
-			var _inputToReplace = "ABILITY 3!";
-		break;
+		switch (lastKeyInput)
+		{
+			case 0:
+				var _inputToReplace = "RIGHT MOVEMENT!";
+			break;
+			case 1:
+				var _inputToReplace = "LEFT MOVEMENT!";
+			break;
+			case 2:
+				var _inputToReplace = "UP MOVEMENT!";
+			break;
+			case 3:
+				var _inputToReplace = "DOWN MOVEMENT!";
+			break;
+		}
+	
+		var _viewToGuiWidthRation = display_get_gui_width() / camera_get_view_width(view_camera[0]);
+		var _viewToGuiHeightRation = display_get_gui_height() / camera_get_view_height(view_camera[0]);
+		draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(70, 1), "SELECT NEW KEY FOR", gdva(3, 0), gdva(3, 1), 0, c_white, c_white, c_white, c_white, 1);
+		draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(42, 1), _inputToReplace, gdva(3, 0), gdva(3, 1), 0, c_red, c_red, c_red, c_red, 1);
 	}
 	
-	var _viewToGuiWidthRation = display_get_gui_width() / camera_get_view_width(view_camera[0]);
-	var _viewToGuiHeightRation = display_get_gui_height() / camera_get_view_height(view_camera[0]);
-	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(70, 1), "SELECT NEW KEY FOR", gdva(3, 0), gdva(3, 1), 0, c_white, c_white, c_white, c_white, 1);
-	draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(42, 1), _inputToReplace, gdva(3, 0), gdva(3, 1), 0, c_red, c_red, c_red, c_red, 1);
+	if (addAbilityKey)
+	{
+		switch (abilityType)
+		{
+			case 0:
+				var _abilityName = "BHUM";
+			break;
+			case 1:
+				var _abilityName = "ASI NE?";
+			break;
+		}
+	
+		var _viewToGuiWidthRation = display_get_gui_width() / camera_get_view_width(view_camera[0]);
+		var _viewToGuiHeightRation = display_get_gui_height() / camera_get_view_height(view_camera[0]);
+		draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(70, 1), "SELECT KEY FOR", gdva(3, 0), gdva(3, 1), 0, c_white, c_white, c_white, c_white, 1);
+		draw_text_transformed_colour((x - camera_get_view_x(view_camera[0])) * _viewToGuiWidthRation + sprite_width / 2 + gdva(30, 0), (y - camera_get_view_y(view_camera[0])) * _viewToGuiHeightRation - gdva(42, 1), _abilityName, gdva(3, 0), gdva(3, 1), 0, c_red, c_red, c_red, c_red, 1);
+	}
 }

@@ -38,9 +38,14 @@ keyRight = keyArray[14];
 keyLeft = keyArray[12];
 keyUp = keyArray[3];
 keyDown = keyArray[13];
-keyAbility1 = keyArray[17];
-keyAbility2 = keyArray[8];
-keyAbility3 = keyArray[9];
+
+//Set Ability Variables
+addAbilityKey = false;
+ability1 = ds_list_create();
+ability2 = ds_list_create();
+ds_list_add(ability1, keyArray[25]);
+ability1Cast = false;
+ability2Cast = false;
 
 //Set Global Pause Variable
 global.pause = false;

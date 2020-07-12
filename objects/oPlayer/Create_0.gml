@@ -43,12 +43,15 @@ keyDown = keyArray[13];
 addAbilityKey = false;
 ability1 = ds_list_create();
 ability2 = ds_list_create();
+ds_list_add(ability1, keyArray[1]);
+ds_list_add(ability2, keyArray[0]);
 ability1Cast = false;
 ability2Cast = false;
 
 //Set Global Pause Variable
 global.pause = false;
 global.timeSpeed = 1;
+global.gameEnd = false;
 
 do
 {

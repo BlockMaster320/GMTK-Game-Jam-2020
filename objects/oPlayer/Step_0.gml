@@ -18,18 +18,30 @@ if (!global.pause)
 }
 #endregion
 
-//Cast an Ability
+//Check For Casting an Ability Input
 if (!global.pause)
 {
-	for (var _i = 0; _i < ds_list_size(ability1); _i ++)
+	for (var _j = 0; _j < ds_list_size(ability1); _j ++)
 	{
-		var _keyInfo = ability1[| _i];
+		var _keyInfo = ability1[| _j];
 		if (keyboard_check_pressed(ord(_keyInfo[0])))
 		{
 			ability1Cast = true;
 			_keyInfo[1] = false;
 			keyArray[_keyInfo[2]] = _keyInfo;
-			ds_list_delete(ability1, _i);
+			ds_list_delete(ability1, _j);
+		}
+	}
+	
+	for (var _k = 0; _k < ds_list_size(ability2); _k ++)
+	{
+		var _keyInfo = ability2[| _k];
+		if (keyboard_check_pressed(ord(_keyInfo[0])))
+		{
+			ability2Cast = true;
+			_keyInfo[1] = false;
+			keyArray[_keyInfo[2]] = _keyInfo;
+			ds_list_delete(ability2, _k);
 		}
 	}
 }
@@ -109,6 +121,20 @@ if (hit)
 
 #region Keyboard
 //KEYBOARD INPUT CONTROL//
+//Check For Running Out Of Keys
+var _activeKeysCount = 0;
+for (var _o = 0; _o < array_length_1d(keyArray); _o ++)
+{
+	var _keyInfo = keyArray[_o];
+	_activeKeysCount += _keyInfo[1];
+}
+if (_activeKeysCount <= 4 + ds_list_size(ability1) + ds_list_size(ability2))
+{
+	keyChange = false;
+	addAbilityKey = false;
+	global.gameEnd = true;
+}
+
 //Change an Input Key on Player Hit || Add new Ability Input Key
 if (keyChange || addAbilityKey)
 {
@@ -126,8 +152,6 @@ if (keyChange || addAbilityKey)
 	for (var _c = 0; _c < ds_list_size(ability2); _c ++)
 	{
 		var _abilityKeyInfo = ability2[| _c];
-		show_debug_message("1: " + _keyInfo[0])
-		show_debug_message("2: " + _abilityKeyInfo[0])
 		if (_newKey == _abilityKeyInfo[0])
 			_abilityKey = true;
 	}
@@ -136,9 +160,11 @@ if (keyChange || addAbilityKey)
 	if (_newKey != keyRight[0] && _newKey != keyLeft[0] && _newKey != keyUp[0] && _newKey != keyDown[0] && !_abilityKey)
 	{	
 		//Go Trough the Key Array, Find a Match With the Pressed Key && Change It
+		var _activeKeysCount = 0;
 		for (var _i = 0; _i < array_length_1d(keyArray); _i ++)
 		{
 			var _keyInfo = keyArray[_i];
+			_activeKeysCount += _keyInfo[1];
 			if (_keyInfo[0] == _newKey && _keyInfo[1] == true)
 			{
 				//Change Key For Movement
@@ -188,23 +214,41 @@ if (keyChange || addAbilityKey)
 				}
 			}
 		}
+		show_debug_message(_activeKeysCount);
+		show_debug_message(4 + ds_list_size(ability1) + ds_list_size(ability2));
 	}
 }
 
-//Add Key For Ability
-if (keyboard_check_pressed(vk_space))
+//Cast an Ability
+if (ability1Cast)
 {
-	abilityType = 0;
-	addAbilityKey = true;
-	global.pause = true;
+	var _newAbility = instance_create_layer(x + sprite_width / 2, y + sprite_height / 2, "Instances", oAbility);
+	_newAbility.abilityType = 0;
+	
+	//global.screenShake = 3;
+	ability1Cast = false;
 }
 
+if (ability2Cast)
+{
+	if (instance_exists(oTower))
+	{
+		var _nearestTower = instance_nearest(x + sprite_width / 2, y + sprite_height / 2, oTower);
+		var _newBullet = instance_create_layer(x + sprite_width / 2, y + sprite_height / 2, "Instances", oThiccBullet);
+		_newBullet.direction = point_direction(x, y, _nearestTower.x, _nearestTower .y);
+		_newBullet.image_angle = _newBullet.direction;
+		_newBullet.towerPosition = [_nearestTower.x, _nearestTower.y];
+	
+		ability2Cast = false;
+	}
+}
+/*
 show_debug_message("last key: " + string(lastKeyInput));
 show_debug_message("keyChange: " + string(keyChange));
 show_debug_message("\nright: " + keyRight[0]);
 show_debug_message("left: " + keyLeft[0]);
 show_debug_message("up: " + keyUp[0]);
-show_debug_message("down: " + keyDown[0]);
+show_debug_message("down: " + keyDown[0]);*/
 /*show_debug_message(keyAbility1);
 show_debug_message(keyAbility2);
 show_debug_message(keyAbility3);*/
@@ -220,15 +264,15 @@ if (keyboard_check_pressed(vk_enter))
 if (global.pause)
 {
 	if (global.timeSpeed > 0.05)
-		global.timeSpeed -= 0.015;
+		global.timeSpeed -= 0.02;
 }
 else
 {
 	if (global.timeSpeed < 1)
-		global.timeSpeed += 0.015;
+		global.timeSpeed += 0.02;
 }
 global.timeSpeed = clamp(global.timeSpeed, 0.05, 1);
-show_debug_message("timeSpeed: " + string(global.timeSpeed));
+/*show_debug_message("timeSpeed: " + string(global.timeSpeed));*/
 
 //Change Sprite Animation Speed
 image_speed = global.timeSpeed;
@@ -241,6 +285,9 @@ if (place_meeting(x, y, oBullet))
 	
 	var _bulletCollider = instance_place(x, y, oBullet);
 	instance_destroy(_bulletCollider);
+	
+	var _newAbility = instance_create_layer(x + sprite_width / 2, y + sprite_height / 2, "Instances", oAbility);
+	_newAbility.abilityType = 0;
 }
 
 if (place_meeting(x,y,oUpgrade))
@@ -254,4 +301,11 @@ if (place_meeting(x,y,oUpgrade))
 		oGameManager.upgradeAvailable = true
 		oGameManager.scoreMultiplier *= 3
 	}
+}
+
+//Destroy Tower on Collision With Player
+if (place_meeting(x, y, oTower))
+{
+	var _towerCollider = instance_place(x, y, oTower)
+	instance_destroy(_towerCollider);
 }

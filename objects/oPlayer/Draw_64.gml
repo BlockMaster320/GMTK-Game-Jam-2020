@@ -70,8 +70,8 @@ for (var _i = 0; _i < array_length_1d(keyArray); _i ++)
 	}
 	else
 	{
-		draw_sprite_ext(sKeyboard, 0, _drawX, _drawY + 10 - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_dkgray, keyboardVisibility);
-		draw_sprite_ext(sKeyboard, _i + 2, _drawX, _drawY + 10 - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_black, keyboardVisibility);
+		draw_sprite_ext(sKeyboard, 0, _drawX, _drawY + gdva(10, 1) - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_dkgray, keyboardVisibility);
+		draw_sprite_ext(sKeyboard, _i + 2, _drawX, _drawY + gdva(10, 1) - gdva(50, 1) * keyboardVisibility, gdva(_keySize, 0), gdva(_keySize, 1), 0, c_black, keyboardVisibility);
 	}
 	
 	//Make the Keyboard Better Visible on Hit

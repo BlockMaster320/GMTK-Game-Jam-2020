@@ -1,8 +1,12 @@
 {
-    "id": "2fd65931-84ef-4822-a691-7fae82bd8bc4",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "SpawnTower",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "SpawnTower",
+  "tags": [],
+  "resourceType": "GMScript",
 }
